@@ -33,6 +33,124 @@
     <link rel="stylesheet" href="assets/css/nice-select.css" />
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .hero-feature-wrapper {
+        padding: 20px 30px;
+      }
+      .hero-feature-wrapper .row {
+        align-items: stretch;
+        margin: 0;
+      }
+      .hero-feature-wrapper [class*="col-"] {
+        display: flex;
+        padding: 0;
+      }
+      .hero-feature-wrapper .hero-feature-icon,
+      .hero-feature-wrapper .hero-feature-icon.ps-0,
+      .hero-feature-wrapper .hero-feature-icon.border-none {
+        position: relative;
+        width: 100%;
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        padding: 24px 30px;
+      }
+      .hero-feature-wrapper .hero-feature-icon.border-none {
+        padding-left: 30px;
+      }
+      .hero-feature-wrapper .hero-feature-icon::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        right: 0;
+        width: 1px;
+        background: rgba(23, 41, 101, 0.15);
+      }
+      .hero-feature-wrapper .hero-feature-icon.border-none::before {
+        display: none;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px;
+        width: 100%;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        flex-shrink: 0;
+        margin: 0;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.3;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon .content p {
+        margin: 0 0 6px;
+        font-size: 14px;
+        color: #6c7a93;
+        line-height: 1.2;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon .content h4 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.3;
+        font-weight: 600;
+      }
+      .hero-feature-wrapper .hero-feature-icon .icon .content h4 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .hero-feature-wrapper .hero-feature-icon > .arrow-icon {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #fff;
+        display: inline-block;
+        box-shadow: 0 6px 20px rgba(6, 3, 48, 0.1);
+        color: var(--theme-color, #1b3ed9);
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+      .hero-feature-wrapper .hero-feature-icon:has(> .arrow-icon) {
+        padding-right: 80px;
+      }
+      .hero-feature-wrapper .hero-feature-icon > .arrow-icon:hover {
+        background-color: var(--theme-color, #1b3ed9);
+        color: #fff;
+      }
+      @media (max-width: 991px) {
+        .hero-feature-wrapper {
+          padding: 20px;
+        }
+        .hero-feature-wrapper [class*="col-"] {
+          display: block;
+        }
+        .hero-feature-wrapper .hero-feature-icon,
+        .hero-feature-wrapper .hero-feature-icon.border-none {
+          min-height: auto;
+          padding: 16px 0 !important;
+        }
+        .hero-feature-wrapper .hero-feature-icon::before {
+          display: none;
+        }
+        .hero-feature-wrapper .hero-feature-icon:has(> .arrow-icon) {
+          padding-right: 60px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Preloader Start -->
@@ -108,7 +226,7 @@
               <ul class="contact-list">
                 <li>
                   <span> Address: </span>
-                  Graaf Floriss 22A CH NY
+                  Balaghat, Madhya Pradesh 481001
                 </li>
                 <li>
                   <span> Call Us: </span>
@@ -141,7 +259,7 @@
           <ul class="top-list">
             <li>
               <i class="fal fa-envelope"></i>
-              <a href="mailto:yordomain@gmial.com"> yordomain@gmial.com </a>
+              <a href="mailto:support@nishokhospital.com"> support@nishokhospital.com </a>
             </li>
             <li>
               <i class="far fa-clock"></i>
@@ -149,7 +267,7 @@
             </li>
             <li>
               <i class="fal fa-map-pin"></i>
-              <p>Graaf Floriss 22A CH NY</p>
+              <p>Balaghat, Madhya Pradesh </p>
             </li>
           </ul>
         </div>
@@ -187,33 +305,37 @@
                         <a href="gallery.html">Gallery</a>
                       </li>
                     
+                     
                       <li>
-                        <a href="about.html">Doctors</a>
+                        <a href="#">
+                          Doctors
+                          <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="submenu">
+                          <li><a href="orthopedic-doctor-balaghat-dr-shrey.html">Dr. Shrey</a></li>
+                          <li><a href="doctor-amisha.html">Dr. Amisha</a></li>
+                        </ul>
+                       
                       </li>
                     
                       
                       <li>
-                        <a href="service-details.html">
+                        <a href="service.html">
                           Services
                           <i class="fas fa-chevron-down"></i>
                         </a>
-                        <ul class="submenu">
-                          <li><a href="service.html">Services</a></li>
-                          <li>
-                            <a href="service-details.html">Services Details</a>
-                          </li>
-                        </ul>
+                       
                       </li>
                     
 
                       <li>
-                        <a href="news.html">
+                        <a href="#">
                           Blog
                           <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="submenu">
-                          <li><a href="news.html">Blog</a></li>
-                          <li><a href="news-details.html">Blog Details</a></li>
+                          <li><a href="#">Blog</a></li>
+                          <li><a href="#">Blog Details</a></li>
                         </ul>
                       </li>
                       <li>
@@ -249,7 +371,6 @@
         </div>
       </div>
     </header>
-
     
 
     <!-- header Search Section Start -->
@@ -317,43 +438,27 @@
     <div class="hero-feature">
       <div class="container">
         <div class="hero-feature-wrapper">
-          <div class="row">
+          <div class="row g-4">
             <div
-              class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay=".3s"
-            >
-              <div class="hero-feature-icon">
-                <div class="icon justify-content-between">
-                  <img src="assets/img/home-1/hero/feature-2.png" alt="img" />
-                  <a href="about.html" class="arrow-icon"
-                    ><i class="far fa-chevron-right"></i
-                  ></a>
-                </div>
-                <h5>
-                  Book an <br />
-                  Appointment
-                </h5>
-              </div>
-            </div>
-            <div
-              class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
+              class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay=".5s"
             >
-              <div class="hero-feature-icon ps-0">
-                <div class="icon justify-content-between">
+              <div class="hero-feature-icon">
+                <div class="icon">
                   <img src="assets/img/home-1/hero/feature-2.png" alt="img" />
-                  <a href="about.html" class="arrow-icon"
-                    ><i class="far fa-chevron-right"></i
-                  ></a>
+                  <div class="content">
+                    <p>Working Hours</p>
+                    <h4>Mon - Sat : 10AM - 8PM</h4>
+                  </div>
                 </div>
-                <h5>
-                  Book an <br />
-                  Appointment
-                </h5>
+               
+                <a href="about.html" class="arrow-icon">
+                  <i class="far fa-chevron-right"></i>
+                </a>
               </div>
             </div>
             <div
-              class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
+              class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay=".7s"
             >
               <div class="hero-feature-icon border-none">
@@ -364,10 +469,7 @@
                     <h4><a href="tel:+38002020900">+38 002 0209 00</a></h4>
                   </div>
                 </div>
-                <h5>
-                  Have an Any <br />
-                  Emergency?
-                </h5>
+               
               </div>
             </div>
           </div>
@@ -392,15 +494,15 @@
             <div class="col-lg-5 wow fadeInUp" data-wow-delay=".3s">
               <div class="about-image">
                 <img
-                  src="assets/img/home-1/about/about-01.jpg"
+                  src="assets/img/home-1/about/about-01.png"
                   alt="img"
                   class="wow img-custom-anim-left"
                 />
                 <div class="about-img-2 float-bob-x">
-                  <img src="assets/img/home-1/about/about-03.jpg" alt="img" />
+                  <img src="assets/img/home-1/about/about-03.png" alt="img" />
                 </div>
                 <div class="about-img-3 float-bob-y">
-                  <img src="assets/img/home-1/about/about-02.jpg" alt="img" />
+                  <img src="assets/img/home-1/about/about-02.png" alt="img" />
                 </div>
               </div>
             </div>
@@ -529,13 +631,13 @@
                   <a
                     href="#thumb1"
                     data-bs-toggle="tab"
-                    class="nav-link "
+                    class="nav-link active "
                   >
                   Orthopedic <i class="far fa-chevron-right"></i>
                   </a>
                 </li>
                 <li class="nav-item wow fadeInUp" data-wow-delay=".4s">
-                  <a href="#thumb2" data-bs-toggle="tab" class="nav-link active">
+                  <a href="#thumb2" data-bs-toggle="tab" class="nav-link ">
                     Dermatology & Skin Services <i class="far fa-chevron-right"></i>
                   </a>
                 </li>
@@ -544,7 +646,7 @@
             </div>
             <div class="col-lg-8 wow fadeInUp" data-wow-delay=".3s">
               <div class="tab-content">
-                <div id="thumb1" class="tab-pane fade ">
+                <div id="thumb1" class="tab-pane fade show active">
                   <div
                     class="service-box-items wow fadeInUp"
                     data-wow-delay=".3s"
@@ -555,10 +657,21 @@
                           <div class="icon">
                             <i class="flaticon-good-heart"></i>
                           </div>
-                          <h3>
-                            <a href="service-details.html"
-                              >Our orthopedic specialists provide advanced treatment for bone, joint, and muscle conditions—helping you recover faster and move pain-free.</a
-                            >
+                          <h3 "> 
+
+                            <a href="service-details.html">
+
+                              <p class="mb-0 text-white" style="font-size: 40px;font-weight: bold;margin-top: 20px;">
+                               Orthopedic Care</p>
+                            </a>
+                          </h3>
+                          <h3 style="margin-top: 10px;">
+                            <p style="font-size: 20px;margin-bottom: 10px;" >
+                              Our orthopedic specialists 
+                              provide advanced treatment for bone, 
+                              joint, and muscle conditions—helping you
+                               recover faster and move pain-free.
+                          </p>
                           </h3>
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
@@ -574,7 +687,7 @@
                             <div class="col-12 col-xl-4">
                               <div class="service-image">
                                 <img
-                                  src="assets/img/home-1/service/service-01.jpg"
+                                  src="assets/img/home-1/service/service-02.png"
                                   alt="img"
                                 />
                                 <span class="post-box">Orthopedic</span>
@@ -592,7 +705,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="thumb2" class="tab-pane fade show active">
+                <div id="thumb2" class="tab-pane fade ">
                   <div class="service-box-items">
                     <div class="row g-4 w-100 align-items-center">
                       <div class="col-12 col-xl-12">
@@ -600,12 +713,20 @@
                           <div class="icon">
                             <i class="flaticon-good-heart"></i>
                           </div>
-                          <p class="mb-0 text-white" style="font-size: 40px;font-weight: bold;margin-top: 20px;">
-                            Advanced Skin & Hair Care Solutions</p>
-                          <h3 style="margin-top: 20px;"> 
-                            <a href="service-details.html"
+                         
+                          <h3 "> 
+
+                            <a href="service-details.html">
+
+                              <p class="mb-0 text-white" style="font-size: 40px;font-weight: bold;margin-top: 20px;">
+                                Advanced Skin & Hair Care Solutions</p>
+                            </a>
+                          </h3>
+                          <h3 style="margin-top: 20px;"">
+
+                            <p style="font-size: 20px;margin-bottom: 10px;"
                               >We offer personalized dermatology treatments to improve skin health, 
-                              enhance appearance, and restore confidence using modern techniques.</a
+                              enhance appearance, and restore confidence using modern techniques.</p
                             >
                           </h3>
                           <div class="row g-4 w-100 align-items-start">
@@ -678,8 +799,7 @@
                 >MEET WITH DOCTOR</span
               >
               <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
-                All On Four Special Offer For <br />
-                Your Physical Treatment
+               Our Expert Doctors For Your Health & Beauty
               </h2>
             </div>
             <div class="call-box wow fadeInUp" data-wow-delay=".3s">
@@ -700,7 +820,7 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="team-box-items mt-0 advance-item">
               <div class="team-image">
-                <img src="assets/img/home-1/team/team-01.jpg" alt="img" />
+                <img src="assets/img/home-1/team/team-01.png" alt="img" />
                 <span class="post-box"> Orthopedic Surgeon </span>
               </div>
               <div class="team-content">
@@ -721,7 +841,7 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="team-box-items mt-0 advance-item">
               <div class="team-image">
-                <img src="assets/img/home-1/team/team-02.jpg" alt="img" />
+                <img src="assets/img/home-1/team/team-02.png" alt="img" />
                 <span class="post-box"> Dermatologist & Skin Specialist</span>
               </div>
               <div class="team-content">
@@ -876,7 +996,7 @@
     <!-- Testimonial Section5 Start -->
     <section
       class="testimonial-section-1 section-padding pb-0 bg-cover fix"
-      style="background-image: url(assets/img/home-1/testimonial/bg.jpg)"
+      style="background-image: url(assets/img/home-1/testimonial/bg.png)"
     >
       <div class="shape float-bob-y">
         <img src="assets/img/home-1/testimonial/vector.png" alt="img" />
@@ -913,13 +1033,13 @@
                 </div>
               </div>
               <div class="testimonial-right-item">
-                <div class="swiper testimonial-slider-1" style="height: 450px;">
+                <div class="swiper testimonial-slider-1">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="testimonial-box-item-1">
                         <div class="client-image">
                           <img
-                            src="assets/img/home-1/testimonial/client-1.jpg"
+                            src="assets/img/home-1/testimonial/client-1.png"
                             alt="img"
                           />
                           <div class="star">
@@ -930,7 +1050,7 @@
                             <i class="fas fa-star"></i>
                           </div>
                         </div>
-                        <div class="testimonial-content" style="height: 145px;">
+                        <div class="testimonial-content">
                           <p>
                             “Dr. Shrey treated my knee fracture with exceptional skill.
                              I recovered faster than expected. Best orthopedic doctor in Balaghat!”
@@ -954,7 +1074,7 @@
                       <div class="testimonial-box-item-1">
                         <div class="client-image">
                           <img
-                            src="assets/img/home-1/testimonial/client-2.jpg"
+                            src="assets/img/home-1/testimonial/client-2.png"
                             alt="img"
                           />
                           <div class="star">
@@ -965,7 +1085,7 @@
                             <i class="fas fa-star"></i>
                           </div>
                         </div>
-                        <div class="testimonial-content" style="height: 145px;">
+                        <div class="testimonial-content">
                           <p>
                             “I was suffering from severe knee pain for a long time. After treatment at Nishok Hospital, 
                             I can walk comfortably again. Dr. Shrey is truly the best orthopedic doctor in Balaghat.”
@@ -989,7 +1109,7 @@
                       <div class="testimonial-box-item-1">
                         <div class="client-image">
                           <img
-                            src="assets/img/home-1/testimonial/client-3.jpg"
+                            src="assets/img/home-1/testimonial/client-1.png"
                             alt="img"
                           />
                           <div class="star">
@@ -1000,7 +1120,7 @@
                             <i class="fas fa-star"></i>
                           </div>
                         </div>
-                        <div class="testimonial-content" style="height: 145px;">
+                        <div class="testimonial-content">
                           <p>
                             “Dr. Amisha’s acne treatment worked really well for me. My skin has 
                             improved a lot and I feel much more confident now. Thank you Nishok Hospital!”
@@ -1095,7 +1215,7 @@
           >
             <div class="news-box-items">
               <div class="news-img">
-                <img src="assets/img/home-1/news/news-01.jpg" alt="img" />
+                <img src="assets/img/home-1/news/news-02.png" alt="img" />
                 <span class="post-box"> Medical </span>
               </div>
               <div class="news-content">
@@ -1119,7 +1239,7 @@
           >
             <div class="news-box-items">
               <div class="news-img">
-                <img src="assets/img/home-1/news/news-02.jpg" alt="img" />
+                <img src="assets/img/home-1/news/news-01.png" alt="img" />
                 <span class="post-box"> Medical </span>
               </div>
               <div class="news-content">
@@ -1143,7 +1263,7 @@
           >
             <div class="news-box-items">
               <div class="news-img">
-                <img src="assets/img/home-1/news/news-03.jpg" alt="img" />
+                <img src="assets/img/home-1/news/news-03.png" alt="img" />
                 <span class="post-box"> Medical </span>
               </div>
               <div class="news-content">
@@ -1511,12 +1631,7 @@
                     <li>
                       <a href="about.html">About Us</a>
                     </li>
-                    <li>
-                      <a href="pricing.html">Pricing Plan</a>
-                    </li>
-                    <li>
-                      <a href="team.html">Team Member</a>
-                    </li>
+                   
                     <li>
                       <a href="contact.html">Our Insight</a>
                     </li>
@@ -1530,21 +1645,17 @@
                     <h3>Our Services</h3>
                   </div>
                   <ul class="list-area">
+                   
                     <li>
-                      <a href="about.html">Ophthalmology</a>
+                      <a href="service.html">Orthopedics</a>
                     </li>
                     <li>
-                      <a href="pricing.html">Orthopedics</a>
+                      <a href="service.html">Dermatology </a>
                     </li>
                     <li>
-                      <a href="team.html">Cosmetology</a>
+                      <a href="service.html">Hair Care</a>
                     </li>
-                    <li>
-                      <a href="contact.html">Pathology</a>
-                    </li>
-                    <li>
-                      <a href="contact.html">Psychiatry</a>
-                    </li>
+                   
                   </ul>
                 </div>
               </div>
@@ -1617,8 +1728,7 @@
                 </div>
                 <div class="footer-content">
                   <p class="text-white">
-                    At MediCenter we intend to create medicines that improve
-                    both the quality and duration of patient lives.
+                   At Nishok Hospital, we are dedicated to providing comprehensive healthcare services to our patients.
                   </p>
                   <ul class="footer-contect">
                     <li>
@@ -1627,8 +1737,8 @@
                       </div>
                       <div class="content">
                         <p>
-                          <a href="mailto:yordomain@gmial.com"
-                            >yordomain@gmial.com</a
+                          <a href="mailto:support@nishokhospital.com"
+                            >support@nishokhospital.com</a
                           >
                         </p>
                       </div>
@@ -1638,7 +1748,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                       </div>
                       <div class="content">
-                        <p>2702 Memory Lane Chicago, IL 60605 New York, USA</p>
+                        <p>Ward no. 28, IF/8, opposite Kids Cloud School, Mayur nagar, Chitragupt Nagar, Balaghat, Madhya Pradesh 481001</p>
                       </div>
                     </li>
                   </ul>
@@ -1651,7 +1761,7 @@
       <div class="footer-bottom wow fadeInUp">
         <div class="container">
           <div class="footer-bottom-wrapper">
-            <p>Copyright © 2025 All Rights Reserved.</p>
+            <p>Copyright © 2026 All Rights Reserved.</p>
             <div class="social-icon d-flex align-items-center">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
