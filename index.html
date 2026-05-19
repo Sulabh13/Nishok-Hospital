@@ -34,125 +34,473 @@
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-      .hero-feature-wrapper {
-        padding: 20px 30px;
+      /* Compact hero quick-info bar (replaces tall two-tile layout) */
+      .page-home .hero-feature-wrapper.index-hero-quickstat {
+        padding: 10px 12px !important;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -72px;
       }
-      .hero-feature-wrapper .row {
-        align-items: stretch;
-        margin: 0;
+
+      @media (max-width: 1199px) {
+        .page-home .hero-feature-wrapper.index-hero-quickstat {
+          margin-top: -44px;
+          max-width: 100%;
+        }
       }
-      .hero-feature-wrapper [class*="col-"] {
+
+      @media (max-width: 991px) {
+        .page-home .hero-feature-wrapper.index-hero-quickstat {
+          margin-top: -28px;
+          padding: 8px 10px !important;
+        }
+      }
+
+      .page-home .index-hero-quickstat__inner {
         display: flex;
-        padding: 0;
+        align-items: stretch;
+        gap: 0;
       }
-      .hero-feature-wrapper .hero-feature-icon,
-      .hero-feature-wrapper .hero-feature-icon.ps-0,
-      .hero-feature-wrapper .hero-feature-icon.border-none {
-        position: relative;
-        width: 100%;
-        min-height: 140px;
+
+      .page-home .index-hero-quickstat__item {
+        flex: 1;
         display: flex;
         align-items: center;
-        padding: 24px 30px;
+        gap: 10px;
+        padding: 8px 12px;
+        min-width: 0;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
       }
-      .hero-feature-wrapper .hero-feature-icon.border-none {
-        padding-left: 30px;
+
+      .page-home a.index-hero-quickstat__item:hover {
+        background-color: rgba(27, 62, 217, 0.07);
       }
-      .hero-feature-wrapper .hero-feature-icon::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        bottom: 20px;
-        right: 0;
-        width: 1px;
-        background: rgba(23, 41, 101, 0.15);
-      }
-      .hero-feature-wrapper .hero-feature-icon.border-none::before {
-        display: none;
-      }
-      .hero-feature-wrapper .hero-feature-icon .icon {
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 18px;
-        width: 100%;
-      }
-      .hero-feature-wrapper .hero-feature-icon .icon img {
-        width: 56px;
-        height: 56px;
+
+      .page-home .index-hero-quickstat__ico {
+        width: 36px;
+        height: 36px;
         object-fit: contain;
         flex-shrink: 0;
-        margin: 0;
       }
-      .hero-feature-wrapper .hero-feature-icon .icon .content {
+
+      .page-home .index-hero-quickstat__text {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        line-height: 1.3;
+        gap: 1px;
+        min-width: 0;
+        text-align: left;
       }
-      .hero-feature-wrapper .hero-feature-icon .icon .content p {
-        margin: 0 0 6px;
-        font-size: 14px;
+
+      .page-home .index-hero-quickstat__label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
         color: #6c7a93;
         line-height: 1.2;
       }
-      .hero-feature-wrapper .hero-feature-icon .icon .content h4 {
-        margin: 0;
-        font-size: 20px;
-        line-height: 1.3;
+
+      .page-home .index-hero-quickstat__value {
+        font-size: clamp(0.875rem, 2.4vw, 1rem);
         font-weight: 600;
+        color: #172965;
+        line-height: 1.25;
+        word-break: break-word;
       }
-      .hero-feature-wrapper .hero-feature-icon .icon .content h4 a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .hero-feature-wrapper .hero-feature-icon > .arrow-icon {
-        position: absolute;
-        top: 50%;
-        right: 18px;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        line-height: 44px;
-        text-align: center;
+
+      .page-home .index-hero-quickstat__chev {
+        margin-left: auto;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
-        background-color: #fff;
-        display: inline-block;
-        box-shadow: 0 6px 20px rgba(6, 3, 48, 0.1);
+        background: #fff;
+        box-shadow: 0 4px 14px rgba(6, 3, 48, 0.08);
         color: var(--theme-color, #1b3ed9);
-        transition: all 0.3s ease;
-        z-index: 2;
+        font-size: 13px;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
       }
-      .hero-feature-wrapper .hero-feature-icon:has(> .arrow-icon) {
-        padding-right: 80px;
-      }
-      .hero-feature-wrapper .hero-feature-icon > .arrow-icon:hover {
+
+      .page-home a.index-hero-quickstat__item:hover .index-hero-quickstat__chev {
         background-color: var(--theme-color, #1b3ed9);
         color: #fff;
       }
-      @media (max-width: 991px) {
-        .hero-feature-wrapper {
-          padding: 20px;
+
+      .page-home .index-hero-quickstat__divider {
+        width: 1px;
+        flex-shrink: 0;
+        background: rgba(23, 41, 101, 0.12);
+        margin: 6px 0;
+      }
+
+      @media (max-width: 480px) {
+        .page-home .index-hero-quickstat__inner {
+          flex-direction: column;
         }
-        .hero-feature-wrapper [class*="col-"] {
-          display: block;
+
+        .page-home .index-hero-quickstat__divider {
+          width: 100%;
+          height: 1px;
+          margin: 0;
         }
-        .hero-feature-wrapper .hero-feature-icon,
-        .hero-feature-wrapper .hero-feature-icon.border-none {
-          min-height: auto;
-          padding: 16px 0 !important;
-        }
-        .hero-feature-wrapper .hero-feature-icon::before {
+
+        .page-home .index-hero-quickstat__chev {
           display: none;
         }
-        .hero-feature-wrapper .hero-feature-icon:has(> .arrow-icon) {
-          padding-right: 60px !important;
+      }
+
+      /* Less bottom padding under hero copy now that the bar is shallow */
+      @media (min-width: 992px) {
+        .page-home .hero-section.hero-1 .hero-content {
+          margin-bottom: 100px;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .page-home .hero-section.hero-1 .hero-content {
+          margin-bottom: 120px;
+        }
+      }
+      /* ---------- Home index: layout & polish ---------- */
+      .page-home .site-logo-responsive {
+        width: clamp(160px, 55vw, 228px);
+        height: auto;
+        max-width: 100%;
+      }
+
+      .page-home .service-icon-box .index-service-panel-title {
+        margin-top: 20px;
+        margin-bottom: 0;
+        line-height: 1.2;
+      }
+
+      .page-home .service-icon-box .index-service-panel-title a {
+        color: #fff;
+        font-weight: 700;
+        font-size: clamp(1.35rem, 4vw, 2.25rem);
+        text-decoration: none;
+      }
+
+      .page-home .service-icon-box .index-service-panel-title a:hover {
+        color: var(--theme-color, #1b3ed9);
+      }
+
+      .page-home .service-icon-box .index-service-panel-lead {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: clamp(0.95rem, 2.6vw, 1.2rem);
+        line-height: 1.55;
+        margin-top: 12px;
+        margin-bottom: 0;
+      }
+
+      .page-home .service-icon-box .index-service-list-heading {
+        color: #fff;
+        font-weight: 600;
+        font-size: clamp(1rem, 2.4vw, 1.15rem);
+        margin-bottom: 10px;
+        margin-top: 8px;
+      }
+
+      .page-home .service-icon-box .index-service-list {
+        color: rgba(255, 255, 255, 0.95);
+        padding-left: 1.25rem;
+        margin: 0;
+        text-align: left;
+        list-style-position: outside;
+      }
+
+      .page-home .service-icon-box .index-service-list li {
+        margin-bottom: 8px;
+        line-height: 1.45;
+      }
+
+      .page-home .feature-treatment-section .feature-icon-box {
+        justify-content: space-between;
+        gap: clamp(12px, 3vw, 56px);
+        flex-wrap: wrap;
+      }
+
+      @media (min-width: 992px) {
+        .page-home .feature-treatment-section .feature-icon-box {
+          flex-wrap: nowrap;
+        }
+      }
+
+      /* Main content headings & paragraphs — scoped so header/offcanvas stay untouched */
+      @media (max-width: 767px) {
+        body.page-home section h1,
+        body.page-home section h2,
+        body.page-home section h3,
+        body.page-home section h4,
+        body.page-home section h5,
+        body.page-home section h6,
+        body.page-home section p,
+        body.page-home footer h1,
+        body.page-home footer h2,
+        body.page-home footer h3,
+        body.page-home footer h4,
+        body.page-home footer h5,
+        body.page-home footer h6,
+        body.page-home footer p {
+          text-align: center;
+        }
+
+        body.page-home .faq-section .accordion .accordion-button,
+        body.page-home .faq-section .accordion .accordion-body {
+          text-align: left;
+        }
+
+        body.page-home .about-wrapper .about-content .about-icon-area .about-items {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        body.page-home .footer-section .footer-contect .content p {
+          text-align: left;
+        }
+
+        body.page-home .vedio-bg-section {
+          height: auto;
+          min-height: 520px;
+        }
+
+        /* Center images & icons on mobile */
+        body.page-home .hero-1 .hero-image {
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+
+        body.page-home .hero-1 .hero-image img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .hero-feature .index-hero-quickstat__item {
+          justify-content: center;
+        }
+
+        body.page-home .hero-feature .index-hero-quickstat__text {
+          text-align: center;
+          align-items: center;
+        }
+
+        body.page-home .about-wrapper .about-image {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .about-wrapper .about-content .about-icon-area .col-12 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        body.page-home .about-wrapper .about-content .about-icon-area .about-img {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 12px;
+        }
+
+        body.page-home .about-wrapper .about-content .about-icon-area .about-img img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .about-wrapper .about-content .about-btn {
+          text-align: center;
+        }
+
+        body.page-home .about-wrapper .about-content .list-box ul {
+          text-align: center;
+        }
+
+        body.page-home .about-wrapper .about-content .list-box ul li {
+          display: inline-flex;
+          align-items: flex-start;
+          justify-content: center;
+          text-align: left;
+          max-width: 100%;
+        }
+
+        body.page-home .service-icon-box > .icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .service-icon-box .service-image {
+          text-align: center;
+        }
+
+        body.page-home .service-icon-box .service-image img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .service-icon-box .theme-btn {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .cta-wrapper .call-box {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .team-box-items .team-image .post-box {
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+        }
+
+        body.page-home .vedio-bg-section .counter-wrapper {
+          justify-content: center;
+        }
+
+        body.page-home .vedio-bg-section .counter-items {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          flex: 1 1 calc(50% - 15px);
+          min-width: 0;
+        }
+
+        body.page-home .vedio-bg-section .counter-items .icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .feature-treatment-section .feature-icon-box {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+          text-align: center;
+        }
+
+        body.page-home .feature-treatment-section .feature-icon-box i {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .testimonial-wrapper-1 .testimonial-image {
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+
+        body.page-home .testimonial-wrapper-1 .testimonial-image img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .testimonial-box-item-1 .client-image {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        body.page-home .testimonial-box-item-1 .client-image img {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .testimonial-box-item-1 .info-item {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body.page-home .testimonial-box-item-1 .info-item .icon img {
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+
+        body.page-home .testimonial-box-item-1 .testimonial-content {
+          padding-left: 0;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 575px) {
+        body.page-home {
+          overflow-x: hidden;
+        }
+
+        body.page-home .news-section .news-content h3 br,
+        body.page-home .news-section .section-title h2 br {
+          display: none;
+        }
+
+        body.page-home .service-wrapper .nav .nav-item .nav-link {
+          font-size: 17px;
+          padding-left: 16px;
+          gap: 10px;
+        }
+
+        body.page-home .service-wrapper .nav .nav-item .nav-link i {
+          width: 48px;
+          height: 48px;
+          line-height: 48px;
+          flex-shrink: 0;
+          font-size: 15px;
+        }
+
+        body.page-home .team-content .phone-box {
+          flex-wrap: wrap;
+          justify-content: center;
+          row-gap: 6px;
+        }
+
+        body.page-home .cta-newsletter-wrapper .form-content form {
+          max-width: 100%;
+        }
+
+        body.page-home .cta-newsletter-wrapper .form-content form input {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+
+      /* Theme hides testimonial arrows under 991px — keep slider usable on this page */
+      @media (max-width: 991px) {
+        body.page-home .testimonial-wrapper-1 .section-title-area .array-button-2 {
+          display: inline-flex !important;
+          align-items: center;
+          gap: 10px;
+          margin-top: 8px;
+        }
+
+        body.page-home .testimonial-wrapper-1 .section-title-area {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body.page-home .cta-section .cta-wrapper .section-title-area.align-items-end {
+          align-items: center !important;
         }
       }
     </style>
   </head>
-  <body>
+  <body class="page-home">
     <!-- Preloader Start -->
     <div id="preloader" class="preloader">
       <div class="animation-preloader">
@@ -200,7 +548,7 @@
             >
               <div class="offcanvas__logo">
                 <a href="index.html">
-                  <img src="assets/img/logo/black-logo.svg" alt="logo-img" />
+                  <img src="assets/img/logo/logo.png" alt="logo-img" />
                 </a>
               </div>
               <div class="offcanvas__close">
@@ -209,45 +557,15 @@
                 </button>
               </div>
             </div>
-            <h3 class="offcanvas-title">Hello There!</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur <br />
-              adipiscing elit,
-            </p>
+         
             <div class="mobile-menu fix mt-3"></div>
-            <div class="social-icon d-flex align-items-center">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="offcanvas__contact">
-              <h3>Information</h3>
-              <ul class="contact-list">
-                <li>
-                  <span> Address: </span>
-                  Balaghat, Madhya Pradesh 481001
-                </li>
-                <li>
-                  <span> Call Us: </span>
-                  <a href="tel:+00012345688">+000 123 456 88</a>
-                </li>
-                <li>
-                  <span> Email: </span>
-                  <a href="mailto:helloseoz@gmial.com"> helloseoz@gmial.com </a>
-                </li>
-              </ul>
-            </div>
-            <a href="contact.html" class="theme-btn">
-              <i class="far fa-chevron-right"></i>
-              Appointment
-            </a>
+          
+       
           </div>
         </div>
       </div>
     </div>
     <div class="offcanvas__overlay"></div>
-
     <!-- Header Top Section Start -->
     <div class="header-top-section">
       <div class="container">
@@ -281,7 +599,13 @@
           <div class="header-main">
             <div class="header-left">
               <a href="index.html" class="header-logo1">
-                <img src="assets/img/header/logo.png" alt="logo-img" style="width: 228px; height: 58px;" />
+                <img
+                  class="site-logo-responsive"
+                  src="assets/img/header/logo.png"
+                  alt="Nishok Hospital"
+                  width="228"
+                  height="58"
+                />
               </a>
             </div>
             <div
@@ -353,7 +677,7 @@
                   </div>
                   <div class="content">
                     <span>Call Emergency</span>
-                    <h6><a href="tel:+6355258-4250">(635) 5258-4250</a></h6>
+                    <h6><a href="tel:+6355258-4250">+918319569357</a></h6>
                   </div>
                 </div>
                 <a href="contact.html" class="theme-btn">
@@ -421,57 +745,66 @@
                 class="theme-btn wow fadeInUp"
                 data-wow-delay=".5s"
               >
-                <i class="far ">📞</i>
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                 Book Appointment
               </a>
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
             <div class="hero-image">
-              <img src="assets/img/home-1/hero/hero-img.png" alt="img" />
+              <img
+                class="img-fluid"
+                src="assets/img/home-1/hero/hero-img.png"
+                alt="Nishok Hospital care team"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="hero-feature">
-      <div class="container">
-        <div class="hero-feature-wrapper">
-          <div class="row g-4">
-            <div
-              class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp"
-              data-wow-delay=".5s"
-            >
-              <div class="hero-feature-icon">
-                <div class="icon">
-                  <img src="assets/img/home-1/hero/feature-2.png" alt="img" />
-                  <div class="content">
-                    <p>Working Hours</p>
-                    <h4>Mon - Sat : 10AM - 8PM</h4>
-                  </div>
-                </div>
-               
-                <a href="about.html" class="arrow-icon">
-                  <i class="far fa-chevron-right"></i>
-                </a>
+    <div class="hero-feature" >
+      <div class="container" >
+        <div
+          class="hero-feature-wrapper index-hero-quickstat wow fadeInUp " style="margin-left: 0px;"
+          data-wow-delay=".35s"
+        >
+          <div class="index-hero-quickstat__inner">
+            <a href="about.html" class="index-hero-quickstat__item">
+              <img
+                class="index-hero-quickstat__ico"
+                src="assets/img/home-1/hero/feature-2.png"
+                alt=""
+                width="36"
+                height="36"
+              />
+              <div class="index-hero-quickstat__text">
+                <span class="index-hero-quickstat__label">Hours</span>
+                <span class="index-hero-quickstat__value"
+                  >Mon–Sat · 10AM–8PM</span
+                >
               </div>
-            </div>
-            <div
-              class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp"
-              data-wow-delay=".7s"
+              <span class="index-hero-quickstat__chev" aria-hidden="true">
+                <i class="far fa-chevron-right"></i>
+              </span>
+            </a>
+            <span class="index-hero-quickstat__divider" role="presentation"></span>
+            <a
+              href="tel:+918319569357"
+              class="index-hero-quickstat__item"
             >
-              <div class="hero-feature-icon border-none">
-                <div class="icon">
-                  <img src="assets/img/home-1/hero/feature-3.png" alt="img" />
-                  <div class="content">
-                    <p>Call Us Anytime</p>
-                    <h4><a href="tel:+38002020900">+38 002 0209 00</a></h4>
-                  </div>
-                </div>
-               
+              <img
+                class="index-hero-quickstat__ico"
+                src="assets/img/home-1/hero/feature-3.png"
+                alt=""
+                width="36"
+                height="36"
+              />
+              <div class="index-hero-quickstat__text">
+                <span class="index-hero-quickstat__label">Call</span>
+                <span class="index-hero-quickstat__value">+91 83195 69357</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -657,44 +990,37 @@
                           <div class="icon">
                             <i class="flaticon-good-heart"></i>
                           </div>
-                          <h3 "> 
-
-                            <a href="service-details.html">
-
-                              <p class="mb-0 text-white" style="font-size: 40px;font-weight: bold;margin-top: 20px;">
-                               Orthopedic Care</p>
-                            </a>
+                          <h3 class="index-service-panel-title">
+                            <a href="service-details.html">Orthopedic Care</a>
                           </h3>
-                          <h3 style="margin-top: 10px;">
-                            <p style="font-size: 20px;margin-bottom: 10px;" >
-                              Our orthopedic specialists 
-                              provide advanced treatment for bone, 
-                              joint, and muscle conditions—helping you
-                               recover faster and move pain-free.
+                          <p class="index-service-panel-lead">
+                            Our orthopedic specialists provide advanced treatment
+                            for bone, joint, and muscle conditions—helping you
+                            recover faster and move pain-free.
                           </p>
-                          </h3>
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
-                              <p style="color: white;font-size: 20px;font-weight: semi-bold; margin-bottom: 10px;">Services List </p>
-                              <ul>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">Fracture Treatment & Bone Setting</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">Knee Replacement Surgery</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">Arthritis Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">Back Pain & Slip Disc Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">Sports Injury Rehabilitation</li>
+                              <p class="index-service-list-heading">Services list</p>
+                              <ul class="index-service-list">
+                                <li>Fracture treatment &amp; bone setting</li>
+                                <li>Knee replacement surgery</li>
+                                <li>Arthritis treatment</li>
+                                <li>Back pain &amp; slip disc treatment</li>
+                                <li>Sports injury rehabilitation</li>
                               </ul>
                             </div>
                             <div class="col-12 col-xl-4">
                               <div class="service-image">
                                 <img
+                                  class="img-fluid"
                                   src="assets/img/home-1/service/service-02.png"
-                                  alt="img"
+                                  alt="Orthopedic care at Nishok Hospital"
                                 />
-                                <span class="post-box">Orthopedic</span>
+                                <!-- <span class="post-box">Orthopedic</span> -->
                               </div>
                             </div>
                           </div>
-                        
+
                           <a href="service-details.html" class="theme-btn mt-5">
                             <i class="far fa-chevron-right"></i>
                             More Details
@@ -713,54 +1039,39 @@
                           <div class="icon">
                             <i class="flaticon-good-heart"></i>
                           </div>
-                         
-                          <h3 "> 
-
-                            <a href="service-details.html">
-
-                              <p class="mb-0 text-white" style="font-size: 40px;font-weight: bold;margin-top: 20px;">
-                                Advanced Skin & Hair Care Solutions</p>
-                            </a>
-                          </h3>
-                          <h3 style="margin-top: 20px;"">
-
-                            <p style="font-size: 20px;margin-bottom: 10px;"
-                              >We offer personalized dermatology treatments to improve skin health, 
-                              enhance appearance, and restore confidence using modern techniques.</p
+                          <h3 class="index-service-panel-title">
+                            <a href="service-details.html"
+                              >Advanced skin &amp; hair care solutions</a
                             >
                           </h3>
+                          <p class="index-service-panel-lead">
+                            We offer personalized dermatology treatments to improve
+                            skin health, enhance appearance, and restore confidence
+                            using modern techniques.
+                          </p>
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
-                              <p style="color: white;font-size: 20px;font-weight: semi-bold; margin-bottom: 10px;">Services List </p>
-                              <ul>
-                                
-
-
-
-
-                                <li style="list-style: circle; color: white; list-style-position: inside;">
-                                  Acne & Pimple Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">
-                                  Pigmentation & Melasma Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">
-                                  PRP Hair Loss Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">
-                                  HydraFacial Skin Treatment</li>
-                                <li style="list-style: circle; color: white; list-style-position: inside;">
-                                  Laser Skin Rejuvenation</li>
+                              <p class="index-service-list-heading">Services list</p>
+                              <ul class="index-service-list">
+                                <li>Acne &amp; pimple treatment</li>
+                                <li>Pigmentation &amp; melasma treatment</li>
+                                <li>PRP hair loss treatment</li>
+                                <li>HydraFacial skin treatment</li>
+                                <li>Laser skin rejuvenation</li>
                               </ul>
                             </div>
                             <div class="col-12 col-xl-4">
                               <div class="service-image">
                                 <img
-                                  src="assets/img/home-1/service/service-01.jpg"
-                                  alt="img"
+                                  class="img-fluid"
+                                  src="assets/img/home-1/service/service-01.png"
+                                  alt="Dermatology services at Nishok Hospital"
                                 />
-                                <span class="post-box">Skin & Hair Care Solutions</span>
+                              
                               </div>
                             </div>
                           </div>
-                        
+
                           <a href="service-details.html" class="theme-btn mt-5">
                             <i class="far fa-chevron-right"></i>
                             More Details
@@ -792,15 +1103,15 @@
           <div class="cta-shape-1">
             <img src="assets/img/home-1/cta/shape-01.png" alt="img" />
           </div>
-          <div class="section-title-area align-items-end mb-0">
+          <div class="section-title-area align-items-end mb-0  bottom-2">
             <div class="section-title">
               <span
                 class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle"
                 >MEET WITH DOCTOR</span
               >
-              <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+              <h3 class="tx-title sec_title tz-itm-title tz-itm-anim text-white">
                Our Expert Doctors For Your Health & Beauty
-              </h2>
+              </h3>
             </div>
             <div class="call-box wow fadeInUp" data-wow-delay=".3s">
               <div class="call-icon">
@@ -808,7 +1119,7 @@
               </div>
               <div class="content">
                 <p>Call Emergency</p>
-                <a href="tel:+38002020900">+38 002 0209 00</a>
+                <a href="tel:+38002020900">+918319569357</a>
               </div>
             </div>
           </div>
@@ -816,11 +1127,17 @@
 
 
 
- <div class="row g-4 section-padding pb-0 advance-wrap" style="justify-content: center;">
+        <div
+          class="row g-4 section-padding pb-0 advance-wrap justify-content-center"
+        >
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="team-box-items mt-0 advance-item">
               <div class="team-image">
-                <img src="assets/img/home-1/team/team-01.png" alt="img" />
+                <img
+                  class="img-fluid"
+                  src="assets/img/home-1/team/team-01.png"
+                  alt="Dr. Shrey, orthopedic surgeon"
+                />
                 <span class="post-box"> Orthopedic Surgeon </span>
               </div>
               <div class="team-content">
@@ -829,7 +1146,7 @@
                   <i class="fas fa-phone-alt"></i>
                   <span
                     ><b>Appointment</b> :
-                    <a href="tel:+38002020900">+38 002 0209 00</a></span
+                    <a href="tel:+38002020900">+918319569357</a></span
                   >
                 </div>
                 <p>
@@ -841,7 +1158,11 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="team-box-items mt-0 advance-item">
               <div class="team-image">
-                <img src="assets/img/home-1/team/team-02.png" alt="img" />
+                <img
+                  class="img-fluid"
+                  src="assets/img/home-1/team/team-02.png"
+                  alt="Dr. Amisha, dermatologist"
+                />
                 <span class="post-box"> Dermatologist & Skin Specialist</span>
               </div>
               <div class="team-content">
@@ -850,7 +1171,7 @@
                   <i class="fas fa-phone-alt"></i>
                   <span
                     ><b>Appointment</b> :
-                    <a href="tel:+38002020900">+38 002 0209 00</a></span
+                    <a href="tel:+38002020900">+918319569357</a></span
                   >
                 </div>
                 <p>
@@ -909,7 +1230,7 @@
                 <p>Awards Winning</p>
               </div>
             </div>
-            <div class="counter-items wow fadeInUp" data-wow-delay=".8s">
+            <div class="counter-items wow fadeInUp" data-wow-delay=".6s">
               <div class="icon">
                 <img src="assets/img/home-1/counter/icon-04.png" alt="img" />
               </div>
@@ -952,7 +1273,7 @@
         <div class="row">
           <div class="col-xl-4 col-lg-6 col-md-6">
             <div class="feature-treatment-items item_right_1">
-              <div class="feature-icon-box" style="justify-content: space-between;">
+              <div class="feature-icon-box">
                 <h3>Our Mission</h3>
                 <i class="flaticon-heartbeat"></i>
               </div>
@@ -964,7 +1285,7 @@
           </div>
           <div class="col-xl-4 col-lg-6 col-md-6">
             <div class="feature-treatment-items">
-              <div class="feature-icon-box" style="justify-content: space-between;">
+              <div class="feature-icon-box">
                 <h3>
                   Our Vision
                 </h3>
@@ -977,7 +1298,7 @@
           </div>
           <div class="col-xl-4 col-lg-6 col-md-6">
             <div class="feature-treatment-items item_left_1">
-              <div class="feature-icon-box" style="justify-content: space-between;">
+              <div class="feature-icon-box">
                 <h3>
                   Our Values
                 </h3>
@@ -1190,7 +1511,7 @@
     </div> -->
     <br />
     <!-- News Section Start -->
-    <section class="news-section section-padding fix pt-0">
+    <!-- <section class="news-section section-padding fix pt-0">
       <div class="news-shape-1">
         <img src="assets/img/home-1/news/shape-01.png" alt="img" />
       </div>
@@ -1283,7 +1604,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Faq Section Start -->
     <section
@@ -1315,7 +1636,7 @@
                     </div>
                     <div class="content">
                       <p>Call Emergency</p>
-                      <h4><a href="tel:63552584250">(635) 5258-4250</a></h4>
+                      <h4><a href="tel:63552584250">+918319569357</a></h4>
                     </div>
                   </div>
                 </div>
@@ -1415,7 +1736,7 @@
 
                     <div
                       class="accordion-item mb-3 wow fadeInUp"
-                      data-wow-delay=".8s"
+                      data-wow-delay=".6s"
                     >
                       <h5 class="accordion-header" id="headingFour">
                         <button
@@ -1587,15 +1908,21 @@
       </div>
       <div class="container">
         <div class="footer-widget-wrapper">
-          <div class="row">
+          <div class="row g-4 footer-widget-row justify-content-center align-items-start">
             <div
-              class="col-xxl-3 col-xl-4 colo-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+              class="col-12 col-md-6 col-lg-4 wow fadeInUp"
               data-wow-delay=".2s"
             >
               <div class="single-footer-widget style-bg-white">
                 <div class="widget-head">
                   <a href="index.html" class="footer-logo">
-                    <img src="assets/img/header/logo.png" alt="img" style="width: 228px; height: 58px;" />
+                    <img
+                      class="site-logo-responsive"
+                      src="assets/img/header/logo.png"
+                      alt="Nishok Hospital"
+                      width="228"
+                      height="58"
+                    />
                   </a>
                 </div>
                 <div class="footer-content">
@@ -1612,14 +1939,14 @@
                     <img src="assets/img/home-1/hero/feature-3.png" alt="img" />
                     <div class="content">
                       <p>For Booking</p>
-                      <h4><a href="tel:63552584250">(635) 5258-4250</a></h4>
+                      <h4><a href="tel:63552584250">+918319569357</a></h4>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="col-xxl-3 col-xl-5 colo-lg-4 col-md-6 ps-lg-5 col-sm-12 wow fadeInUp"
+              class="col-12 col-md-6 col-lg-4 wow fadeInUp"
               data-wow-delay=".4s"
             >
               <div class="single-footer-widget-area">
@@ -1652,75 +1979,15 @@
                     <li>
                       <a href="service.html">Dermatology </a>
                     </li>
-                    <li>
-                      <a href="service.html">Hair Care</a>
-                    </li>
+                  
                    
                   </ul>
                 </div>
               </div>
             </div>
             <div
-              class="col-xxl-3 col-xl-3 colo-lg-4 col-md-6 ps-lg-5 col-sm-6 wow fadeInUp"
+              class="col-12 col-lg-4 wow fadeInUp"
               data-wow-delay=".6s"
-            >
-              <div class="single-footer-widget">
-                <div class="widget-head">
-                  <h3>Recent Posts</h3>
-                </div>
-                <ul class="recent-post">
-                  <li>
-                    <div class="thumb">
-                      <img
-                        src="assets/img/home-1/footer/post-1.jpg"
-                        alt="img"
-                      />
-                    </div>
-                    <div class="content">
-                      <p>12 June, 2026</p>
-                      <h4>
-                        <a href="news-details.html"
-                          >Latest Equipment for the Heart Treatment</a
-                        >
-                      </h4>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="thumb">
-                      <img
-                        src="assets/img/home-1/footer/post-2.jpg"
-                        alt="img"
-                      />
-                    </div>
-                    <div class="content">
-                      <p>12 June, 2026</p>
-                      <h4>
-                        <a href="news-details.html"
-                          >Future of Heart Treatment</a
-                        >
-                      </h4>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="thumb">
-                      <img
-                        src="assets/img/home-1/footer/post-3.jpg"
-                        alt="img"
-                      />
-                    </div>
-                    <div class="content">
-                      <p>12 June, 2026</p>
-                      <h4>
-                        <a href="news-details.html">Smart Tech in Cardiology</a>
-                      </h4>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div
-              class="col-xxl-3 col-xl-4 colo-lg-4 col-md-6 ps-xxl-5 wow fadeInUp"
-              data-wow-delay=".8s"
             >
               <div class="single-footer-widget">
                 <div class="widget-head">

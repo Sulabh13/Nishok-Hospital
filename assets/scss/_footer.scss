@@ -17,14 +17,111 @@
         padding: 50px 0 80px;
     }
 
+    .footer-widget-row {
+        align-items: flex-start !important;
+
+        > [class*="col-"] {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+
+            > .single-footer-widget,
+            > .single-footer-widget-area {
+                width: 100%;
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        .single-footer-widget,
+        .single-footer-widget-area .single-footer-widget {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .single-footer-widget-area {
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: auto;
+            gap: 48px;
+        }
+    }
+
+    @include breakpoint (max-lg) {
+        .single-footer-widget-area {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+        }
+    }
+
+    @include breakpoint (max-md) {
+        .single-footer-widget.style-bg-white {
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            .widget-head {
+                text-align: center;
+            }
+
+            ul li {
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+
+        .single-footer-widget {
+            .widget-head {
+                text-align: center;
+
+                &::before {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .list-area {
+                text-align: center;
+            }
+        }
+
+        .single-footer-widget-area {
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+
+            .single-footer-widget {
+                width: 100%;
+            }
+        }
+
+        .footer-widget-row > [class*="col-"]:last-child .single-footer-widget {
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .single-footer-widget .footer-contect li {
+            text-align: left;
+        }
+    }
+
+    @include breakpoint (max-sm) {
+        padding: 40px 0 60px;
+
+        .single-footer-widget.style-bg-white {
+            padding: 32px 20px;
+        }
+    }
+
     .single-footer-widget-area {
         @include flex;
-        justify-content: space-between;
-
-        @include breakpoint (max-xxl){
-            justify-content: start;
-            gap: 100px;
-        }
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 48px;
     }
 
     .single-footer-widget {
