@@ -31,9 +31,56 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+      @media (max-width: 767px) {
+        body.page-doctor-details .team-details-section .team-right-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content h5 {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content h2,
+        body.page-doctor-details .team-details-section .team-right-content p {
+          text-align: center;
+          width: 100%;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content .about-button {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content .about-button .theme-btn {
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items h3,
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items p {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-right-items.team-expertise .expertise-service-list li {
+          font-size: 14px;
+          line-height: 1.55;
+        }
+      }
+    </style>
  
     </head>
-    <body>
+    <body class="page-doctor-details page-dr-shrey">
  <!-- Preloader Start -->
  <div id="preloader" class="preloader">
     <div class="animation-preloader">
@@ -115,7 +162,7 @@
           </li>
           <li>
             <i class="far fa-clock"></i>
-            <p>Mon - Fri: 09am - 07pm</p>
+            <p>Mon - Fri: 09:30am - 7:30pm</p>
           </li>
           <li>
             <i class="fal fa-map-pin"></i>
@@ -326,26 +373,41 @@ Known for his patient-first approach, clear communication, and expert care, Dr. 
                                 <div class="team-right-items team-expertise">
                                     <div class="expertise-card">
                                         <h3>Qualifications &amp; Expertise</h3>
-                                        <ul class="service-list" style="display: flex; flex-direction: column; gap: 10px;">
+                                        <ul class="service-list expertise-service-list expertise-service-list--meta">
                                         <li>
                                             <i class="far fa-check"></i>
-                                            <strong>Qualification:</strong> MBBS + MS / DNB Orthopedics (Specialist Degree)
+                                            <div class="expertise-item-row">
+                                                <strong class="expertise-item-label">Qualification:</strong>
+                                                <span class="expertise-item-value">MBBS + MS / DNB Orthopedics (Specialist Degree)</span>
+                                            </div>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            <strong>Specialty:</strong> Orthopedic Surgery
+                                            <div class="expertise-item-row">
+                                                <strong class="expertise-item-label">Specialty:</strong>
+                                                <span class="expertise-item-value">Orthopedic Surgery</span>
+                                            </div>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            <strong>Hospital:</strong> Nishok Hospital, Balaghat
+                                            <div class="expertise-item-row">
+                                                <strong class="expertise-item-label">Hospital:</strong>
+                                                <span class="expertise-item-value">Nishok Hospital, Balaghat</span>
+                                            </div>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            <strong>Areas Served:</strong> Balaghat, Gondia, Waraseoni, Seoni, Mandla district
+                                            <div class="expertise-item-row">
+                                                <strong class="expertise-item-label">Areas Served:</strong>
+                                                <span class="expertise-item-value">Balaghat, Gondia, Waraseoni, Seoni, Mandla district</span>
+                                            </div>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            <strong>Languages:</strong> Hindi, English, local dialects
+                                            <div class="expertise-item-row">
+                                                <strong class="expertise-item-label">Languages:</strong>
+                                                <span class="expertise-item-value">Hindi, English, local dialects</span>
+                                            </div>
                                         </li>
                                         </ul>
                                     </div>
@@ -353,42 +415,42 @@ Known for his patient-first approach, clear communication, and expert care, Dr. 
                                     <div class="expertise-card">
                                         <h3>Conditions Treated by Dr. Shrey</h3>
                                         <p>Dr. Shrey specializes in diagnosis and treatment of:</p>
-                                        <ul class="service-list" style="display: flex; flex-direction: column; gap: 10px;">
+                                        <ul class="service-list expertise-service-list">
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Fracture Treatment — all types including closed, open, and complex fractures
+                                            <span class="expertise-item-copy">Fracture Treatment — all types including closed, open, and complex fractures</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Knee &amp; Hip Replacement Surgery — for severe arthritis and joint damage
+                                            <span class="expertise-item-copy">Knee &amp; Hip Replacement Surgery — for severe arthritis and joint damage</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Arthritis Treatment — osteoarthritis and rheumatoid arthritis management
+                                            <span class="expertise-item-copy">Arthritis Treatment — osteoarthritis and rheumatoid arthritis management</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Back Pain Treatment — chronic and acute back pain management
+                                            <span class="expertise-item-copy">Back Pain Treatment — chronic and acute back pain management</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Slip Disc / Herniated Disc — non-surgical and surgical approaches
+                                            <span class="expertise-item-copy">Slip Disc / Herniated Disc — non-surgical and surgical approaches</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Sports Injuries — ligament tears, tendon injuries, bone stress fractures
+                                            <span class="expertise-item-copy">Sports Injuries — ligament tears, tendon injuries, bone stress fractures</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Joint Pain — shoulder, knee, ankle and wrist pain treatment
+                                            <span class="expertise-item-copy">Joint Pain — shoulder, knee, ankle and wrist pain treatment</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Bone Infections (Osteomyelitis) — diagnosis and treatment
+                                            <span class="expertise-item-copy">Bone Infections (Osteomyelitis) — diagnosis and treatment</span>
                                         </li>
                                         <li>
                                             <i class="far fa-check"></i>
-                                            Pediatric Orthopedic Conditions — bone deformities in children
+                                            <span class="expertise-item-copy">Pediatric Orthopedic Conditions — bone deformities in children</span>
                                         </li>
                                         </ul>
                                     </div>
@@ -470,9 +532,9 @@ Known for his patient-first approach, clear communication, and expert care, Dr. 
                       services.
                     </p>
                     <ul>
-                      <li>Monday - Friday <span>9AM - 10PM</span></li>
-                      <li>Saturday <span>9AM - 08PM</span></li>
-                      <li>Sunday <span>9AM - 12AM</span></li>
+                      <li>Monday - Friday <span>9:30AM - 7:30PM</span></li>
+                      <li>Saturday <span>9:30AM - 7:30PM</span></li>
+                      <li>Sunday <span>9:30AM - 7:30PM</span></li>
                     </ul>
                     <div class="icon">
                       <img src="assets/img/home-1/hero/feature-3.png" alt="img" />

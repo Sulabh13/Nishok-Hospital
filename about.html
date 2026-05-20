@@ -30,9 +30,83 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+      @media (max-width: 767px) {
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .section-title {
+          text-align: center !important;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .section-title .subtitle {
+          display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .section-title h2 {
+          text-align: center;
+        }
+
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .about-text {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .about-button {
+          justify-content: center;
+        }
+
+        body.page-about .about-section-3 .about-wrapper-3 .about-content .about-button .theme-btn {
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      /* Facilities card — centered button & even spacing */
+      body.page-about .pricing-section-5 .pricing-card-item .pricing-list {
+        margin-top: 20px;
+        margin-bottom: 32px;
+      }
+
+      body.page-about .pricing-section-5 .pricing-card-item .pricing-button {
+        display: flex;
+        justify-content: center;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+
+      body.page-about .pricing-section-5 .pricing-card-item .pricing-button .theme-btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (max-width: 575px) {
+        body.page-about .pricing-section-5 .pricing-main-card .pricing-card-item {
+          padding-bottom: 24px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        body.page-about .team-box-items .team-image .post-box {
+          left: 50% !important;
+          right: auto;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          max-width: calc(100% - 30px);
+          text-align: center;
+        }
+      }
+    </style>
  
     </head>
-    <body>
+    <body class="page-about">
 
          <!-- Preloader Start -->
     <div id="preloader" class="preloader">
@@ -115,7 +189,7 @@
               </li>
               <li>
                 <i class="far fa-clock"></i>
-                <p>Mon - Fri: 09am - 07pm</p>
+                <p>Mon - Fri: 09:30am - 7:30pm</p>
               </li>
               <li>
                 <i class="fal fa-map-pin"></i>
@@ -557,8 +631,6 @@
                                         <div class="pricing-top">
                                             <h4>Our Facility Features:</h4>
                                         </div>
-                                     
-                                     <br>
                                         <ul class="pricing-list">
                         
                                             <li>
@@ -868,9 +940,9 @@
                       services.
                     </p>
                     <ul>
-                      <li>Monday - Friday <span>9AM - 10PM</span></li>
-                      <li>Saturday <span>9AM - 08PM</span></li>
-                      <li>Sunday <span>9AM - 12AM</span></li>
+                      <li>Monday - Friday <span>9:30AM - 7:30PM</span></li>
+                      <li>Saturday <span>9:30AM - 7:30PM</span></li>
+                      <li>Sunday <span>9:30AM - 7:30PM</span></li>
                     </ul>
                     <div class="icon">
                       <img src="assets/img/home-1/hero/feature-3.png" alt="img" />

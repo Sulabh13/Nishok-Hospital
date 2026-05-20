@@ -30,9 +30,56 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+      @media (max-width: 767px) {
+        body.page-doctor-details .team-details-section .team-right-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content h5 {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content h2,
+        body.page-doctor-details .team-details-section .team-right-content p {
+          text-align: center;
+          width: 100%;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content .about-button {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        body.page-doctor-details .team-details-section .team-right-content .about-button .theme-btn {
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items h3,
+        body.page-doctor-details .team-details-section .team-details-bottom .team-left-items p {
+          text-align: center;
+        }
+
+        body.page-doctor-details .team-details-section .team-details-bottom .team-right-items.team-expertise .expertise-service-list li {
+          font-size: 14px;
+          line-height: 1.55;
+        }
+      }
+    </style>
  
     </head>
-    <body class="page-doctor-details">
+    <body class="page-doctor-details page-dr-amisha">
  <!-- Preloader Start -->
  <div id="preloader" class="preloader">
     <div class="animation-preloader">
@@ -143,7 +190,7 @@
           </li>
           <li>
             <i class="far fa-clock"></i>
-            <p>Mon - Fri: 09am - 07pm</p>
+            <p>Mon - Fri: 09:30am - 7:30pm</p>
           </li>
           <li>
             <i class="fal fa-map-pin"></i>
@@ -366,26 +413,41 @@
                                 <div class="team-right-items team-expertise">
                                     <div class="expertise-card">
                                         <h3>Qualifications &amp; Expertise</h3>
-                                        <ul class="service-list expertise-service-list">
+                                        <ul class="service-list expertise-service-list expertise-service-list--meta">
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                <strong>Qualification:</strong> MBBS + MD Dermatology, Venereology &amp; Leprology (DVL)
+                                                <div class="expertise-item-row">
+                                                    <strong class="expertise-item-label">Qualification:</strong>
+                                                    <span class="expertise-item-value">MBBS + MD Dermatology, Venereology &amp; Leprology (DVL)</span>
+                                                </div>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                <strong>Specialty:</strong> Medical &amp; Cosmetic Dermatology
+                                                <div class="expertise-item-row">
+                                                    <strong class="expertise-item-label">Specialty:</strong>
+                                                    <span class="expertise-item-value">Medical &amp; Cosmetic Dermatology</span>
+                                                </div>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                <strong>Hospital:</strong> Nishok Hospital, Balaghat
+                                                <div class="expertise-item-row">
+                                                    <strong class="expertise-item-label">Hospital:</strong>
+                                                    <span class="expertise-item-value">Nishok Hospital, Balaghat</span>
+                                                </div>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                <strong>Areas Served:</strong> Balaghat, Gondia, Waraseoni, Seoni, Mandla
+                                                <div class="expertise-item-row">
+                                                    <strong class="expertise-item-label">Areas Served:</strong>
+                                                    <span class="expertise-item-value">Balaghat, Gondia, Waraseoni, Seoni, Mandla</span>
+                                                </div>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                <strong>Languages:</strong> Hindi, English
+                                                <div class="expertise-item-row">
+                                                    <strong class="expertise-item-label">Languages:</strong>
+                                                    <span class="expertise-item-value">Hindi, English</span>
+                                                </div>
                                             </li>
                                         </ul>
                                     </div>
@@ -396,35 +458,35 @@
                                         <ul class="service-list expertise-service-list">
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Acne Treatment — medical-grade acne management including topical, oral therapy &amp; procedures
+                                                <span class="expertise-item-copy">Acne Treatment — medical-grade acne management including topical, oral therapy &amp; procedures</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                PRP Hair Treatment — Platelet-Rich Plasma therapy for hair loss &amp; thinning
+                                                <span class="expertise-item-copy">PRP Hair Treatment — Platelet-Rich Plasma therapy for hair loss &amp; thinning</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                HydraFacial — advanced facial treatment for deep cleansing, hydration &amp; glow
+                                                <span class="expertise-item-copy">HydraFacial — advanced facial treatment for deep cleansing, hydration &amp; glow</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Melasma Treatment — targeted treatment for facial pigmentation and dark patches
+                                                <span class="expertise-item-copy">Melasma Treatment — targeted treatment for facial pigmentation and dark patches</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Laser Treatment — laser skin resurfacing, spot removal &amp; skin rejuvenation
+                                                <span class="expertise-item-copy">Laser Treatment — laser skin resurfacing, spot removal &amp; skin rejuvenation</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Pigmentation Treatment — treatment for uneven skin tone, dark spots &amp; post-acne marks
+                                                <span class="expertise-item-copy">Pigmentation Treatment — treatment for uneven skin tone, dark spots &amp; post-acne marks</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Chemical Peels — controlled exfoliation for brighter, younger-looking skin
+                                                <span class="expertise-item-copy">Chemical Peels — controlled exfoliation for brighter, younger-looking skin</span>
                                             </li>
                                             <li>
                                                 <i class="far fa-check"></i>
-                                                Anti-Aging Treatments — skin tightening, wrinkle reduction &amp; skin rejuvenation
+                                                <span class="expertise-item-copy">Anti-Aging Treatments — skin tightening, wrinkle reduction &amp; skin rejuvenation</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -504,9 +566,9 @@
                       services.
                     </p>
                     <ul>
-                      <li>Monday - Friday <span>9AM - 10PM</span></li>
-                      <li>Saturday <span>9AM - 08PM</span></li>
-                      <li>Sunday <span>9AM - 12AM</span></li>
+                      <li>Monday - Friday <span>9:30AM - 7:30PM</span></li>
+                      <li>Saturday <span>9:30AM - 7:30PM</span></li>
+                      <li>Sunday <span>9:30AM - 7:30PM</span></li>
                     </ul>
                     <div class="icon">
                       <img src="assets/img/home-1/hero/feature-3.png" alt="img" />

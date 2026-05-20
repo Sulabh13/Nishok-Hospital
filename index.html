@@ -223,6 +223,14 @@
         line-height: 1.45;
       }
 
+      /* Service tab CTA — inline-block ignores margin auto without block + fit-content */
+      .page-home .service-icon-box > .theme-btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .page-home .feature-treatment-section .feature-icon-box {
         justify-content: space-between;
         gap: clamp(12px, 3vw, 56px);
@@ -257,6 +265,49 @@
         body.page-home .faq-section .accordion .accordion-button,
         body.page-home .faq-section .accordion .accordion-body {
           text-align: left;
+        }
+
+        body.page-home .faq-section .faq-content .section-title.text-start {
+          text-align: center !important;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        body.page-home .faq-section .faq-content .section-title .subtitle,
+        body.page-home .faq-section .faq-content .section-title span.tx-subTitle,
+        body.page-home .faq-section .faq-content .section-title h2 {
+          text-align: center;
+        }
+
+        body.page-home .faq-section .faq-content .section-title .subtitle {
+          display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .faq-section .faq-content .faq-button {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        body.page-home .faq-section .faq-content .faq-button .theme-btn {
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-home .faq-section .faq-content .faq-button .icon-items {
+          justify-content: center;
+        }
+
+        body.page-home .faq-section .faq-content .faq-button .icon-items .content,
+        body.page-home .faq-section .faq-content .faq-button .icon-items .content p,
+        body.page-home .faq-section .faq-content .faq-button .icon-items .content h4,
+        body.page-home .faq-section .faq-content .faq-button .icon-items .content h4 a {
+          text-align: center;
         }
 
         body.page-home .about-wrapper .about-content .about-icon-area .about-items {
@@ -323,15 +374,23 @@
           text-align: center;
         }
 
+        body.page-home .about-wrapper .about-content .list-box .col-12 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
         body.page-home .about-wrapper .about-content .list-box ul {
-          text-align: center;
+          text-align: left;
+          width: 100%;
         }
 
         body.page-home .about-wrapper .about-content .list-box ul li {
-          display: inline-flex;
+          display: flex;
           align-items: flex-start;
-          justify-content: center;
+          justify-content: flex-start;
           text-align: left;
+          width: 100%;
           max-width: 100%;
         }
 
@@ -350,20 +409,18 @@
           margin-right: auto;
         }
 
-        body.page-home .service-icon-box .theme-btn {
-          margin-left: auto;
-          margin-right: auto;
-        }
-
         body.page-home .cta-wrapper .call-box {
           margin-left: auto;
           margin-right: auto;
         }
 
         body.page-home .team-box-items .team-image .post-box {
-          left: 50%;
+          left: 50% !important;
+          right: auto;
           transform: translateX(-50%);
           white-space: nowrap;
+          max-width: calc(100% - 30px);
+          text-align: center;
         }
 
         body.page-home .vedio-bg-section .counter-wrapper {
@@ -581,7 +638,7 @@
             </li>
             <li>
               <i class="far fa-clock"></i>
-              <p>Mon - Fri: 09am - 07pm</p>
+              <p>Mon - Fri: 09:30am - 7:30pm</p>
             </li>
             <li>
               <i class="fal fa-map-pin"></i>
@@ -991,7 +1048,7 @@
                             <i class="flaticon-good-heart"></i>
                           </div>
                           <h3 class="index-service-panel-title">
-                            <a href="service-details.html">Orthopedic Care</a>
+                            <a href="#">Orthopedic Care</a>
                           </h3>
                           <p class="index-service-panel-lead">
                             Our orthopedic specialists provide advanced treatment
@@ -1001,7 +1058,7 @@
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
                               <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list">
+                              <ul class="index-service-list" style="list-style: circle; padding-left: 0;">
                                 <li>Fracture treatment &amp; bone setting</li>
                                 <li>Knee replacement surgery</li>
                                 <li>Arthritis treatment</li>
@@ -1021,7 +1078,7 @@
                             </div>
                           </div>
 
-                          <a href="service-details.html" class="theme-btn mt-5">
+                          <a href="service.html" class="theme-btn mt-5">
                             <i class="far fa-chevron-right"></i>
                             More Details
                           </a>
@@ -1040,7 +1097,7 @@
                             <i class="flaticon-good-heart"></i>
                           </div>
                           <h3 class="index-service-panel-title">
-                            <a href="service-details.html"
+                            <a href="#"
                               >Advanced skin &amp; hair care solutions</a
                             >
                           </h3>
@@ -1052,7 +1109,7 @@
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
                               <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list">
+                              <ul class="index-service-list" style="list-style: circle; padding-left: 0;">
                                 <li>Acne &amp; pimple treatment</li>
                                 <li>Pigmentation &amp; melasma treatment</li>
                                 <li>PRP hair loss treatment</li>
@@ -1072,7 +1129,7 @@
                             </div>
                           </div>
 
-                          <a href="service-details.html" class="theme-btn mt-5">
+                          <a href="service.html" class="theme-btn mt-5">
                             <i class="far fa-chevron-right"></i>
                             More Details
                           </a>
@@ -1183,15 +1240,7 @@
           </div>
          
         </div>
-        <div
-          class="team-button text-center mt-5 wow fadeInUp"
-          data-wow-delay=".9s"
-        >
-          <a href="team.html" class="theme-btn">
-            <i class="far fa-chevron-right"></i>
-            View Our Doctors
-          </a>
-        </div>
+     
       </div>
     </section>
 
@@ -1931,9 +1980,9 @@
                     services.
                   </p>
                   <ul>
-                    <li>Monday - Friday <span>9AM - 10PM</span></li>
-                    <li>Saturday <span>9AM - 08PM</span></li>
-                    <li>Sunday <span>9AM - 12AM</span></li>
+                    <li>Monday - Friday <span>9:30AM - 7:30PM</span></li>
+                    <li>Saturday <span>9:30AM - 7:30PM</span></li>
+                    <li>Sunday <span>9:30AM - 7:30PM</span></li>
                   </ul>
                   <div class="icon">
                     <img src="assets/img/home-1/hero/feature-3.png" alt="img" />

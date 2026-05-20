@@ -30,6 +30,26 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+      .gallery-simple-grid .gallery-simple-item {
+        display: block;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .gallery-simple-grid .gallery-simple-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-simple-grid .gallery-simple-item:hover img {
+        transform: scale(1.03);
+      }
+    </style>
  
     </head>
     <body>
@@ -115,7 +135,7 @@
               </li>
               <li>
                 <i class="far fa-clock"></i>
-                <p>Mon - Fri: 09am - 07pm</p>
+                <p>Mon - Fri: 09:30am - 7:30pm</p>
               </li>
               <li>
                 <i class="fal fa-map-pin"></i>
@@ -253,161 +273,112 @@
         <!-- Gallery Section Start -->
         <section class="gallery-section section-padding fix">
             <div class="container">
-                <div class="gallery-header d-flex flex-wrap align-items-center justify-content-between mb-4">
-                    <div class="section-title mb-0">
-                        <span class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle">GALLERY</span>
-                        <h2 class="tx-title gallery-txt sec_title tz-itm-title tz-itm-anim" >Inside Nishok Hospital</h2>
-                        <p class="mt-3">Explore our facilities, patient areas, and advanced treatment spaces.</p>
-                    </div>
-                    <div class="array-button-2">
-                        <button class="array-prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="array-next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
+                <div class="section-title text-center mb-4">
+                    <span class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle">GALLERY</span>
+                    <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">Inside Nishok Hospital</h2>
+                    <p class="mt-3 mb-0">Tap any photo to view it full size.</p>
                 </div>
 
-                <div class="gallery-slider-area">
-                    <div class="swiper project-slider-5 gallery-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".2s">
-                                    <a href="assets/img/gallery/gallery1.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery1.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Hospital Facility</h6>
-                                        <h3><a href="contact.html">Reception &amp; Waiting Area</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".3s">
-                                    <a href="assets/img/gallery/gallery2.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery2.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Patient Care</h6>
-                                        <h3><a href="contact.html">Consultation Rooms</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".4s">
-                                    <a href="assets/img/gallery/gallery3.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery3.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Treatment Zone</h6>
-                                        <h3><a href="contact.html">Advanced Procedure Area</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".5s">
-                                    <a href="assets/img/gallery/gallery4.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery4.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Diagnostics</h6>
-                                        <h3><a href="contact.html">Modern Imaging Unit</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".6s">
-                                    <a href="assets/img/gallery/gallery5.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery5.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Comfort &amp; Care</h6>
-                                        <h3><a href="contact.html">Patient Rooms</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="project-image-2 gallery-card wow fadeInUp" data-wow-delay=".7s">
-                                    <a href="assets/img/gallery/gallery6.png" class="img-popup">
-                                        <img src="assets/img/gallery/gallery6.png" alt="Nishok Hospital Gallery">
-                                    </a>
-                                    <div class="project-content">
-                                        <h6>Special Care</h6>
-                                        <h3><a href="contact.html">Physiotherapy Zone</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row g-3 gallery-simple-grid">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery1.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery1.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                </div>
-
-                <div class="row g-4 mt-4 gallery-grid">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="project-image-2 gallery-card">
-                            <a href="assets/img/gallery/gallery1.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery1.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Hospital Facility</h6>
-                                <h3><a href="contact.html">Reception &amp; Waiting Area</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery2.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery2.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="project-image-2 gallery-card">
-                            <a href="assets/img/gallery/gallery2.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery2.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Patient Care</h6>
-                                <h3><a href="contact.html">Consultation Rooms</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery3.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery3.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="project-image-2 gallery-card">
-                            <a href="assets/img/gallery/gallery3.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery3.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Treatment Zone</h6>
-                                <h3><a href="contact.html">Advanced Procedure Area</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery4.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery4.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="project-image-2 gallery-card">
-                            <a href="assets/img/gallery/gallery4.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery4.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Diagnostics</h6>
-                                <h3><a href="contact.html">Modern Imaging Unit</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery5.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery5.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="project-image-2 gallery-card">
-                            <a href="assets/img/gallery/gallery5.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery5.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Comfort &amp; Care</h6>
-                                <h3><a href="contact.html">Patient Rooms</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery6.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery6.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="project-image-2 gallery-card">
-                                      <a href="assets/img/gallery/gallery6.png" class="img-popup">
-                                <img src="assets/img/gallery/gallery6.png" alt="Nishok Hospital Gallery">
-                            </a>
-                            <div class="project-content">
-                                <h6>Special Care</h6>
-                                <h3><a href="contact.html">Physiotherapy Zone</a></h3>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery7.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery7.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery8.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery8.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery9.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery9.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery10.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery10.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery11.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery11.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery12.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery12.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery13.png" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery13.png" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery14.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery14.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery15.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery15.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery16.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery16.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery17.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery17.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery18.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery18.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery19.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery19.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="assets/img/gallery/gallery20.jpeg" class="img-popup gallery-simple-item" title="Nishok Hospital">
+                            <img src="assets/img/gallery/gallery20.jpeg" alt="Nishok Hospital gallery" loading="lazy">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -443,9 +414,9 @@
                       services.
                     </p>
                     <ul>
-                      <li>Monday - Friday <span>9AM - 10PM</span></li>
-                      <li>Saturday <span>9AM - 08PM</span></li>
-                      <li>Sunday <span>9AM - 12AM</span></li>
+                      <li>Monday - Friday <span>9:30AM - 7:30PM</span></li>
+                      <li>Saturday <span>9:30AM - 7:30PM</span></li>
+                      <li>Sunday <span>9:30AM - 7:30PM</span></li>
                     </ul>
                     <div class="icon">
                       <img src="assets/img/home-1/hero/feature-3.png" alt="img" />

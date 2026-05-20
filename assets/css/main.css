@@ -10487,13 +10487,65 @@ button {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  word-break: break-word;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list li i {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-top: 4px;
+}
+
+.team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list .expertise-item-copy {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+}
+
+.team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-row {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(7.25rem, max-content) minmax(0, 1fr);
+  -webkit-column-gap: 12px;
+     -moz-column-gap: 12px;
+          column-gap: 12px;
+  row-gap: 4px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+@media (min-width: 992px) {
+  .team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-row {
+    grid-template-columns: 9.75rem minmax(0, 1fr);
+  }
+}
+
+.team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-label {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-value {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .team-details-wrapper .team-details-bottom .team-right-items.team-expertise .expertise-service-list--meta .expertise-item-label {
+    white-space: normal;
+  }
 }
 
 .team-details-wrapper .team-details-bottom .team-left-items h3,
