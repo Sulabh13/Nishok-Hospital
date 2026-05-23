@@ -215,6 +215,7 @@
         padding-left: 1.25rem;
         margin: 0;
         text-align: left;
+        list-style-type: circle;
         list-style-position: outside;
       }
 
@@ -223,7 +224,7 @@
         line-height: 1.45;
       }
 
-      /* Service tab CTA — inline-block ignores margin auto without block + fit-content */
+      /* Service tab CTA   inline-block ignores margin auto without block + fit-content */
       .page-home .service-icon-box > .theme-btn {
         display: block;
         width: fit-content;
@@ -243,7 +244,7 @@
         }
       }
 
-      /* Main content headings & paragraphs — scoped so header/offcanvas stay untouched */
+      /* Main content headings & paragraphs   scoped so header/offcanvas stay untouched */
       @media (max-width: 767px) {
         body.page-home section h1,
         body.page-home section h2,
@@ -409,6 +410,78 @@
           margin-right: auto;
         }
 
+        /* Service tab panel — fix left offset & center list (mobile only) */
+        body.page-home .service-wrapper .service-box-items {
+          display: block !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding: 20px 16px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        body.page-home .service-wrapper .service-box-items > .row {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          --bs-gutter-x: 0;
+          width: 100% !important;
+        }
+
+        body.page-home .service-wrapper .tab-content,
+        body.page-home .service-wrapper .tab-content > .tab-pane,
+        body.page-home .service-wrapper .col-lg-8 {
+          width: 100% !important;
+          max-width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        body.page-home .service-icon-box {
+          width: 100%;
+          max-width: 100%;
+          text-align: center;
+        }
+
+        body.page-home .service-icon-box > .row {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          --bs-gutter-x: 0;
+          justify-content: center;
+        }
+
+        body.page-home .service-icon-box .col-xl-8,
+        body.page-home .service-icon-box .col-xl-4 {
+          flex: 0 0 100%;
+          max-width: 100% !important;
+          width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        body.page-home .service-icon-box .index-service-list-heading {
+          text-align: center !important;
+          width: 100%;
+        }
+
+        body.page-home .service-icon-box .index-service-list {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 auto !important;
+          text-align: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        body.page-home .service-icon-box .index-service-list li {
+          list-style: none !important;
+          text-align: center !important;
+          display: block;
+          width: 100%;
+          padding: 0 !important;
+          margin: 0 0 8px !important;
+        }
+
         body.page-home .cta-wrapper .call-box {
           margin-left: auto;
           margin-right: auto;
@@ -520,10 +593,22 @@
           font-size: 15px;
         }
 
+        body.page-home .team-box-items .team-content {
+          text-align: center;
+        }
+
         body.page-home .team-content .phone-box {
+          display: flex;
           flex-wrap: wrap;
+          align-items: center;
           justify-content: center;
+          text-align: center;
+          width: 100%;
           row-gap: 6px;
+        }
+
+        body.page-home .team-content .phone-box span {
+          text-align: center;
         }
 
         body.page-home .cta-newsletter-wrapper .form-content form {
@@ -536,7 +621,7 @@
         }
       }
 
-      /* Theme hides testimonial arrows under 991px — keep slider usable on this page */
+      /* Theme hides testimonial arrows under 991px   keep slider usable on this page */
       @media (max-width: 991px) {
         body.page-home .testimonial-wrapper-1 .section-title-area .array-button-2 {
           display: inline-flex !important;
@@ -734,7 +819,7 @@
                   </div>
                   <div class="content">
                     <span>Call Emergency</span>
-                    <h6><a href="tel:+6355258-4250">+918319569357</a></h6>
+                    <h6><a href="tel:+918319569357">+918319569357</a></h6>
                   </div>
                 </div>
                 <a href="contact.html" class="theme-btn">
@@ -909,7 +994,7 @@
                   </h2>
                 </div>
                 <p class="about-text wow fadeInUp" data-wow-delay=".2s">
-                  At Nishok Hospital, we combine specialist medical expertise with modern technology and a patient-first approach. Our facility is designed to provide comfortable, accurate, and effective treatment for orthopedic and dermatological conditions — all under one roof in Balaghat.
+                  At Nishok Hospital, we combine specialist medical expertise with modern technology and a patient-first approach. Our facility is designed to provide comfortable, accurate, and effective treatment for orthopedic and dermatological conditions   all under one roof in Balaghat.
 
                 </p>
                 <div class="about-icon-area wow fadeInUp" data-wow-delay=".3s">
@@ -1052,13 +1137,13 @@
                           </h3>
                           <p class="index-service-panel-lead">
                             Our orthopedic specialists provide advanced treatment
-                            for bone, joint, and muscle conditions—helping you
+                            for bone, joint, and muscle conditions helping you
                             recover faster and move pain-free.
                           </p>
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
                               <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list" style="list-style: circle; padding-left: 0;">
+                              <ul class="index-service-list">
                                 <li>Fracture treatment &amp; bone setting</li>
                                 <li>Knee replacement surgery</li>
                                 <li>Arthritis treatment</li>
@@ -1109,7 +1194,7 @@
                           <div class="row g-4 w-100 align-items-start">
                             <div class="col-12 col-xl-8">
                               <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list" style="list-style: circle; padding-left: 0;">
+                              <ul class="index-service-list">
                                 <li>Acne &amp; pimple treatment</li>
                                 <li>Pigmentation &amp; melasma treatment</li>
                                 <li>PRP hair loss treatment</li>
@@ -1316,7 +1401,7 @@
             Balaghat's Trusted Specialist Hospital
           </h2>
           <p>Nishok Hospital is a premier multi-specialty medical facility located in the heart of Balaghat, Madhya Pradesh. Established with a clear vision of bringing world-class medical care to the people of Central India, we have grown to become the most trusted name in Orthopedic and Dermatology healthcare across Balaghat, Gondia, Waraseoni, and Seoni.
-            From complex fracture surgeries to advanced skin treatments, our doctors bring specialist expertise combined with deep compassion — treating every patient with the care and dignity they deserve.
+            From complex fracture surgeries to advanced skin treatments, our doctors bring specialist expertise combined with deep compassion   treating every patient with the care and dignity they deserve.
             </p>
         </div>
         <div class="row">
@@ -1328,7 +1413,7 @@
               </div>
               <p>
                 To provide accessible, expert, and compassionate medical care to every patient in Balaghat
-                 and surrounding regions — ensuring no one has to travel far for specialist treatment.
+                 and surrounding regions   ensuring no one has to travel far for specialist treatment.
               </p>
             </div>
           </div>
@@ -1341,7 +1426,7 @@
                 <i class="flaticon-social-care"></i>
               </div>
               <p>
-                To become Central India's leading destination for orthopedic and dermatological healthcare — where every patient walks out healthier, happier, and confident.
+                To become Central India's leading destination for orthopedic and dermatological healthcare   where every patient walks out healthier, happier, and confident.
               </p>
             </div>
           </div>
@@ -1427,7 +1512,7 @@
                           </p>
                           <div class="info-item">
                             <div class="info-content">
-                              <h5>— Patient from Balaghat</h5>
+                              <h5>  Patient from Balaghat</h5>
                               
                             </div>
                             <div class="icon">
@@ -1462,7 +1547,7 @@
                           </p>
                           <div class="info-item">
                             <div class="info-content">
-                              <h5>— Patient from Gondia</h5>
+                              <h5>  Patient from Gondia</h5>
                               
                             </div>
                             <div class="icon">
@@ -1497,7 +1582,7 @@
                           </p>
                           <div class="info-item">
                             <div class="info-content">
-                              <h5>— Patient from Balaghat</h5>
+                              <h5>  Patient from Balaghat</h5>
                               
                             </div>
                             <div class="icon">
@@ -2007,10 +2092,7 @@
                     <li>
                       <a href="about.html">About Us</a>
                     </li>
-                   
-                    <li>
-                      <a href="contact.html">Our Insight</a>
-                    </li>
+                
                     <li>
                       <a href="contact.html">24/7 Support</a>
                     </li>

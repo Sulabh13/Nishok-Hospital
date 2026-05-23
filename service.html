@@ -31,7 +31,24 @@
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
         <style>
+      .service-section-2 .service-box-items-2 .service-icon img {
+        width: 82px;
+        height: 82px;
+        object-fit: contain;
+        display: block;
+      }
+
+      @media (max-width: 575px) {
+        .service-section-2 .service-box-items-2 .service-icon img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
       @media (max-width: 767px) {
+        .derma{
+          margin-top: 50px !important;
+        }
         body.page-service .why-choose-us-section-2 .choose-us-content .section-title.text-start {
           text-align: center !important;
           display: flex;
@@ -46,6 +63,56 @@
 
         body.page-service .why-choose-us-section-2 .choose-us-content .section-title .subtitle {
           display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-service .why-choose-us-section-2 .choose-us-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body.page-service .why-choose-us-section-2 .faq-items {
+          width: 100%;
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-service .why-choose-us-section-2 .faq-items .accordion-item .accordion-header .accordion-button {
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+
+        body.page-service .why-choose-us-section-2 .faq-items .accordion-item .accordion-header .accordion-button::after {
+          position: absolute;
+          right: 0;
+          margin-left: 0;
+        }
+
+        body.page-service .why-choose-us-section-2 .faq-items .accordion-item .accordion-body {
+          text-align: center;
+        }
+
+        body.page-service .why-choose-us-section-2 .choose-us-content > .theme-btn {
+          display: inline-flex;
+          align-items: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        body.page-service .why-choose-us-section-2 .choose-us-image {
+          text-align: center;
+          width: 100%;
+        }
+
+        body.page-service .why-choose-us-section-2 .choose-us-image img {
+          display: block;
           margin-left: auto;
           margin-right: auto;
         }
@@ -226,7 +293,7 @@
                     </div>
                     <div class="content">
                       <span>Call Emergency</span>
-                      <h6><a href="tel:+6355258-4250">+918319569357</a></h6>
+                      <h6><a href="tel:+918319569357">+918319569357</a></h6>
                     </div>
                   </div>
                   <a href="contact.html" class="theme-btn">
@@ -288,7 +355,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-health-insurance"></i>
+                              <img src="assets/img/icons/ortho1.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
    
                             <h3><a >Fracture Treatment & Bone Setting</a></h3>
@@ -299,7 +366,7 @@
                                 </li>
                                 <li>
                                     <i class="far fa-check"></i>
-                                    Reduction (bone realignment) — surgical or non-surgical
+                                    Reduction (bone realignment)   surgical or non-surgical
                                 </li>
                                 <li>
                                     <i class="far fa-check"></i>
@@ -316,7 +383,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-talk"></i>
+                              <img src="assets/img/icons/ortho2.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Knee Replacement Surgery</a></h3>
                             <ul class="service-list">
@@ -343,13 +410,13 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-stethoscope"></i>
+                              <img src="assets/img/icons/ortho3.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Arthritis Treatment</a></h3>
                             <ul class="service-list">
                                 <li>
                                     <i class="far fa-check"></i>
-                                    Medication management — anti-inflammatory drugs
+                                    Medication management   anti-inflammatory drugs
                                 </li>
                                 <li>
                                     <i class="far fa-check"></i>
@@ -370,13 +437,13 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-medicine"></i>
+                              <img src="assets/img/icons/ortho4.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Back Pain & Slip Disc Treatment</a></h3>
                             <ul class="service-list">
                                 <li>
                                     <i class="far fa-check"></i>
-                                    Conservative management — rest, medication, physiotherapy
+                                    Conservative management   rest, medication, physiotherapy
                                 </li>
                                 <li>
                                     <i class="far fa-check"></i>
@@ -397,7 +464,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-blood-transfusion"></i>
+                              <img src="assets/img/icons/ortho5.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Sports Injury Rehabilitation</a></h3>
                             <ul class="service-list">
@@ -425,14 +492,14 @@
                    
                 </div>
 <br>
-                <h3 style="text-align: center; margin-top: 20px; font-weight: 600;" data-wow-delay=".6s">
+                <h3 style="text-align: center; margin-top: 20px; font-weight: 600;" class="derma" data-wow-delay=".6s">
                     Dermatology & Skin Services</h3>
                 <div class="row g-4 align-items-stretch">
                    
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-pills"></i>
+                              <img src="assets/img/icons/derma1.png" alt="Acne & Pimple Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Acne & Pimple Treatment</a></h3>
                             <ul class="service-list">
@@ -459,7 +526,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-lung"></i>
+                              <img src="assets/img/icons/derma2.png" alt="Pigmentation & Melasma Treatment" width="82" height="82" />
                             </div>
                             <h3><a >Pigmentation & Melasma Treatment</a></h3>
                             <ul class="service-list">
@@ -486,7 +553,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".9s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-doctor"></i>
+                                <img src="assets/img/icons/derma3.png" alt="PRP Hair Loss Treatment" width="82" height="82" />
                             </div>
                             <h3><a >PRP Hair Loss Treatment</a></h3>
                             <ul class="service-list">
@@ -513,7 +580,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-pills"></i>
+                                <img src="assets/img/icons/derma4.png" alt="HydraFacial Skin Treatment" width="82" height="82" />
                             </div>
                             <h3><a >HydraFacial Skin Treatment</a></h3>
                             <ul class="service-list">
@@ -540,7 +607,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="service-box-items-2 style-2 h-100 d-flex flex-column">
                             <div class="service-icon">
-                                <i class="flaticon-lung"></i>
+                                <img src="assets/img/icons/derma5.png" alt="Laser Skin Rejuvenation" width="82" height="82" />
                             </div>
                             <h3><a >Laser Skin Rejuvenation</a></h3>
                             <ul class="service-list">
@@ -631,7 +698,7 @@
                                                 </h5>
                                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                                                     <div class="accordion-body">
-                                                        Nishok Hospital is equipped with modern diagnostic and treatment equipment to ensure accurate diagnosis and effective care. The hospital maintains a hygienic, patient-friendly environment with advanced facilities including orthopedic operation theater, dermatology procedure room, and digital imaging support.receiving healthcare with dignity and respect and involving them in all decisions about their health. This type of care is also called ‘person-centred care’. It is an approach that is linked.
+                                                        Nishok Hospital is equipped with modern diagnostic and treatment equipment to ensure accurate diagnosis and effective care. The hospital maintains a hygienic, patient-friendly environment with advanced facilities including orthopedic operation theater, dermatology procedure room, and digital imaging support receiving healthcare with dignity and respect and involving them in all decisions about their health. This type of care is also called ‘person-centred care’. It is an approach that is linked.
                                                     </div>
                                                 </div>
                                             </div>
@@ -714,9 +781,7 @@
                           <a href="about.html">About Us</a>
                         </li>
                        
-                        <li>
-                          <a href="contact.html">Our Insight</a>
-                        </li>
+                      
                         <li>
                           <a href="contact.html">24/7 Support</a>
                         </li>
