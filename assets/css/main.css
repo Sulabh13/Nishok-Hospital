@@ -12942,6 +12942,89 @@ button {
   }
 }
 
+@media (max-width: 767px) {
+  .testimonial-wrapper-1 .testimonial-right-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 {
+    margin-top: 12px;
+    padding: 18px 14px 16px;
+    padding-top: 0;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1::before {
+    left: 0;
+    top: 16px;
+    width: 100%;
+    height: calc(100% - 16px);
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 26px rgba(122, 121, 170, 0.2);
+            box-shadow: 0 8px 26px rgba(122, 121, 170, 0.2);
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .client-image {
+    gap: 12px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .client-image .star {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 2px;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .testimonial-content {
+    margin-top: 14px;
+    padding-left: 0;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .testimonial-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .testimonial-content .info-item {
+    width: 100%;
+    gap: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+
+  .testimonial-wrapper-1 .testimonial-right-item .testimonial-box-item-1 .testimonial-content .info-item .icon img {
+    max-width: 40px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .testimonial-section-2 {
   position: relative;
   z-index: 9;
