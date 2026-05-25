@@ -31,6 +31,107 @@
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
         <style>
+      /* Testimonial avatar — colored circle with initial letter */
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+      }
+
+      /* Counter strip spacing fix (all devices) */
+      body.page-about .vedio-bg-section .counter-section {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      body.page-about .vedio-bg-section .counter-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 34px 28px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 26px 18px;
+        align-items: stretch;
+      }
+
+      body.page-about .vedio-bg-section .counter-items {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      body.page-about .vedio-bg-section .counter-items .icon {
+        width: 74px;
+        height: 74px;
+        line-height: 74px;
+        flex-shrink: 0;
+      }
+
+      body.page-about .vedio-bg-section .counter-items .content h2 {
+        margin: 0 0 8px;
+        line-height: 1;
+        font-size: clamp(2rem, 3.8vw, 3.4rem);
+        display: inline-flex;
+        align-items: baseline;
+        gap: 2px;
+        white-space: nowrap;
+      }
+
+      body.page-about .vedio-bg-section .counter-items .content p {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(0.95rem, 1.45vw, 1.1rem);
+        line-height: 1.35;
+        text-transform: capitalize;
+      }
+
+      @media (max-width: 1199px) {
+        body.page-about .vedio-bg-section .counter-wrapper {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          padding: 30px 20px;
+          gap: 20px 16px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        body.page-about .vedio-bg-section .counter-section {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        body.page-about .vedio-bg-section .counter-wrapper {
+          grid-template-columns: 1fr;
+          padding: 24px 16px;
+          gap: 16px;
+          border-radius: 10px;
+        }
+
+        body.page-about .vedio-bg-section .counter-items {
+          justify-content: center;
+          text-align: center;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        body.page-about .vedio-bg-section .counter-items .content h2 {
+          justify-content: center;
+          font-size: clamp(2rem, 9vw, 2.6rem);
+          margin-bottom: 6px;
+        }
+
+        body.page-about .vedio-bg-section .counter-items .content p {
+          font-size: 0.98rem;
+        }
+      }
+
       @media (max-width: 767px) {
         body.page-about .about-section-3 .about-wrapper-3 .about-content .section-title {
           text-align: center !important;
@@ -750,10 +851,10 @@
 
        
 
-        <!-- Testimonial Section5 Start -->
+
         <section
-        class="testimonial-section-1 section-padding pb-0 bg-cover fix"
-        style="background-image: url(assets/img/home-1/testimonial/bg.png)"
+        class="testimonial-section-1 section-padding pb-0 fix"
+        style="background: #fff;"
       >
         <div class="shape float-bob-y">
           <img src="assets/img/home-1/testimonial/vector.png" alt="img" />
@@ -774,10 +875,10 @@
                   <div class="section-title">
                     <span
                       class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle"
-                      >OUR TESTIMONIAL</span
+                      >GOOGLE REVIEWS</span
                     >
                     <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
-                      Our Real Story of Clients
+                      What Our Patients Say
                     </h2>
                   </div>
                   <div class="array-button-2">
@@ -795,10 +896,7 @@
                       <div class="swiper-slide">
                         <div class="testimonial-box-item-1">
                           <div class="client-image">
-                            <img
-                              src="assets/img/home-1/testimonial/client-1.png"
-                              alt="img"
-                            />
+                            <div class="testimonial-avatar" style="background:#2490EB;">A</div>
                             <div class="star">
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
@@ -809,13 +907,12 @@
                           </div>
                           <div class="testimonial-content">
                             <p>
-                              “Dr. Shrey treated my knee fracture with exceptional skill.
-                               I recovered faster than expected. Best orthopedic doctor in Balaghat!”
+                              “Mam treatment is very nice..staff is well behaved and polite overall satisfied”
                             </p>
                             <div class="info-item">
                               <div class="info-content">
-                                <h5>  Patient from Balaghat</h5>
-                                
+                                <h5>Anisha Singh</h5>
+                                <span>Google Review</span>
                               </div>
                               <div class="icon">
                                 <img
@@ -830,10 +927,7 @@
                       <div class="swiper-slide">
                         <div class="testimonial-box-item-1">
                           <div class="client-image">
-                            <img
-                              src="assets/img/home-1/testimonial/client-2.png"
-                              alt="img"
-                            />
+                            <div class="testimonial-avatar" style="background:#02C9B8;">K</div>
                             <div class="star">
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
@@ -844,13 +938,12 @@
                           </div>
                           <div class="testimonial-content">
                             <p>
-                              “I was suffering from severe knee pain for a long time. After treatment at Nishok Hospital, 
-                              I can walk comfortably again. Dr. Shrey is truly the best orthopedic doctor in Balaghat.”
+                              “Excellent diagnosis and treatment also good nature of the doctor. Got Satisfied Results..”
                             </p>
                             <div class="info-item">
                               <div class="info-content">
-                                <h5>  Patient from Gondia</h5>
-                                
+                                <h5>Kekte Laykishor</h5>
+                                <span>Google Review</span>
                               </div>
                               <div class="icon">
                                 <img
@@ -865,10 +958,7 @@
                       <div class="swiper-slide">
                         <div class="testimonial-box-item-1">
                           <div class="client-image">
-                            <img
-                              src="assets/img/home-1/testimonial/client-1.png"
-                              alt="img"
-                            />
+                            <div class="testimonial-avatar" style="background:#F59E0B;">H</div>
                             <div class="star">
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
@@ -879,13 +969,105 @@
                           </div>
                           <div class="testimonial-content">
                             <p>
-                              “Dr. Amisha’s acne treatment worked really well for me. My skin has 
-                              improved a lot and I feel much more confident now. Thank you Nishok Hospital!”
+                              “Meko mam ka ilaj bhut acha lga bhut jaldi aram mil gya”
                             </p>
                             <div class="info-item">
                               <div class="info-content">
-                                <h5>  Patient from Balaghat</h5>
-                                
+                                <h5>Hiraji Karkade</h5>
+                                <span>Google Review</span>
+                              </div>
+                              <div class="icon">
+                                <img
+                                  src="assets/img/home-5/testimonial/01.svg"
+                                  alt="img"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-box-item-1">
+                          <div class="client-image">
+                            <div class="testimonial-avatar" style="background:#8B5CF6;">A</div>
+                            <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </div>
+                          </div>
+                          <div class="testimonial-content">
+                            <p>
+                              “Very good rha medam ka treatment”
+                            </p>
+                            <div class="info-item">
+                              <div class="info-content">
+                                <h5>Ankush Kamde</h5>
+                                <span>Google Review</span>
+                              </div>
+                              <div class="icon">
+                                <img
+                                  src="assets/img/home-5/testimonial/01.svg"
+                                  alt="img"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-box-item-1">
+                          <div class="client-image">
+                            <div class="testimonial-avatar" style="background:#EF4444;">J</div>
+                            <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </div>
+                          </div>
+                          <div class="testimonial-content">
+                            <p>
+                              “Mujhe mam ka ilaaj bhut hi acha lga”
+                            </p>
+                            <div class="info-item">
+                              <div class="info-content">
+                                <h5>Jitendra Bahe</h5>
+                                <span>Google Review</span>
+                              </div>
+                              <div class="icon">
+                                <img
+                                  src="assets/img/home-5/testimonial/01.svg"
+                                  alt="img"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-box-item-1">
+                          <div class="client-image">
+                            <div class="testimonial-avatar" style="background:#10B981;">T</div>
+                            <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </div>
+                          </div>
+                          <div class="testimonial-content">
+                            <p>
+                              “Mam ka treatment bhot acha lga mam bhot ache h”
+                            </p>
+                            <div class="info-item">
+                              <div class="info-content">
+                                <h5>Teams Online</h5>
+                                <span>Google Review</span>
                               </div>
                               <div class="icon">
                                 <img
@@ -905,6 +1087,7 @@
           </div>
         </div>
       </section>
+
 
      
 <br>
