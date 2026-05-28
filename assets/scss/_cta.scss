@@ -121,6 +121,7 @@
             p {
                 color: $white;
                 margin-top: 10px;
+                
             }
         }
     }
@@ -195,6 +196,236 @@
     }
 }
 
+// ==================================================
+/* ==============================
+   Counter Section CSS
+   Fully Responsive & Production Ready
+================================= */
+
+/* Section Spacing */
+.counter-section {
+  position: relative;
+  padding: 80px 15px;
+  background: #f8f9fc;
+  overflow: hidden;
+}
+
+/* Container */
+.counter-section .container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Counter Wrapper */
+.counter-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Zoom Effect Style */
+.zoom-effect-style {
+  transition: all 0.4s ease-in-out;
+}
+
+.zoom-effect-style:hover {
+  transform: scale(1.01);
+}
+
+/* Counter Item */
+.counter-items {
+  flex: 1 1 calc(25% - 30px);
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.counter-items:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon */
+.counter-items .icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-items .icon img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Content */
+.counter-items .content {
+  width: 100%;
+}
+
+/* Heading / Odometer Number */
+.counter-items .content h2 {
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+
+.counter-items .content h2 .odometer {
+  display: inline-block;
+}
+
+/* Paragraph */
+.counter-items .content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ==============================
+   WOW Animation Compatibility
+================================= */
+
+.wow {
+  visibility: hidden;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+/* Keep Existing Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ==============================
+   Tablet Responsive
+================================= */
+
+@media (max-width: 1024px) {
+  .counter-section {
+    padding: 70px 15px;
+  }
+
+  .counter-wrapper {
+    gap: 24px;
+  }
+
+  .counter-items {
+    flex: 1 1 calc(50% - 24px);
+    padding: 30px 20px;
+  }
+
+  .counter-items .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .counter-items .content h2 {
+    font-size: 36px;
+  }
+
+  .counter-items .content p {
+    font-size: 15px;
+  }
+}
+
+/* ==============================
+   Mobile Responsive
+================================= */
+
+@media (max-width: 767px) {
+  .counter-section {
+    padding: 60px 12px;
+  }
+
+  .counter-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .counter-items {
+    width: 100%;
+    min-width: 100%;
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .counter-items .icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 18px;
+  }
+
+  .counter-items .content h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .counter-items .content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ==============================
+   Small Mobile Devices
+================================= */
+
+@media (max-width: 480px) {
+  .counter-section {
+    padding: 50px 10px;
+  }
+
+  .counter-items {
+    padding: 24px 18px;
+  }
+
+  .counter-items .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .counter-items .content h2 {
+    font-size: 26px;
+  }
+
+  .counter-items .content p {
+    font-size: 13px;
+  }
+}
+// ====================================================
 .counter-section {
     position: relative;
     z-index: 9;
