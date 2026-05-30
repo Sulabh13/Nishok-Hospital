@@ -741,6 +741,74 @@
           align-items: center !important;
         }
       }
+
+      /* Counter section — consistent typography & spacing */
+.counter-section { padding: 60px 0; }
+
+.counter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.counter-items {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px 24px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+.counter-items:last-child { border-right: none; }
+
+/* Icon: uniform 48×48 container */
+.counter-items .icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter-items .icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Number: uniform size & weight */
+.counter-items .content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;         /* white */
+  line-height: 1;
+  margin: 0 0 8px;
+  letter-spacing: -1px;
+}
+
+/* suffix same size as number — no more tiny "k" */
+.counter-items .content h2 .suffix {
+  font-size: 32px;        /* was 26px, now matched */
+  font-weight: 700;       /* was 400, now same weight */
+  color: #ffffff;         /* white */
+}
+
+/* label slightly muted white */
+.counter-items .content p {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .counter-items {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
     </style>
   </head>
   <body class="page-home">
@@ -920,7 +988,7 @@
                   </div>
                   <div class="content">
                     <span>Call Emergency</span>
-                    <h6><a href="tel:+918319569357">+918319569357 ,7648922304</a></h6>
+                    <h6><a href="tel:+918319569357">+918319569357</a></h6>
                   </div>
                 </div>
                 <a href="contact.html" class="theme-btn">
@@ -1070,15 +1138,15 @@
             <div class="col-lg-5 wow fadeInUp" data-wow-delay=".3s">
               <div class="about-image">
                 <img
-                  src="assets/img/home-1/about/about-01.png"
-                  alt="img"
+                  src="assets/img/home-1/about/doctor.png"
+                  alt="img" style="width: 100%; height: 600px; object-fit: cover; padding-top: 70px;"
                   class="wow img-custom-anim-left"
                 />
                 <div class="about-img-2 float-bob-x">
-                  <img src="assets/img/home-1/about/about-03.png" alt="img" />
+                  <!-- <img src="assets/img/home-1/about/about-03.png" alt="img" /> -->
                 </div>
                 <div class="about-img-3 float-bob-y">
-                  <img src="assets/img/home-1/about/about-02.png" alt="img" />
+                  <!-- <img src="assets/img/home-1/about/about-02.png" alt="img" /> -->
                 </div>
               </div>
             </div>
@@ -1103,8 +1171,8 @@
                     <div class="col-12 col-md-6">
                       <div class="about-img ">
                         <img
-                          src="assets/img/home-1/about/icon-01.png"
-                          alt="img"
+                          src="assets/img/home-1/about/missdr.png"
+                          alt="img" style="height: 70px;"
                         />
                       </div>
                       <div class="about-items ">
@@ -1118,15 +1186,15 @@
                     <div class="col-12 col-md-6">
                       <div class="about-img ">
                         <img
-                          src="assets/img/home-1/about/icon-02.png"
-                          alt="img"
+                          src="assets/img/home-1/about/dr-removebg-preview.png"
+                          alt="img" style="height: 70px;"
                         />
                       </div>
                       <div class="about-items ">
                         <p class="mb-0">
                           <span style="font-weight: bold; font-size: 20px;">Qualified Dermatologist</span>
                           <br />
-                          Dr. Amisha, specialist in skin, hair, and cosmetic treatments
+                        Leading Dermatologist Dr. Amisha specializing in skin,hair, laser & advance aesthetic treatments
                         </p>
                       </div>
                     </div>
@@ -1178,161 +1246,352 @@
     </section>
 
     <!-- Service Section Start -->
-    <section class="service-section section-padding section-bg-2 fix">
-      <div class="service-shape-1">
-        <img src="assets/img/home-1/service/shape-1.png" alt="img" />
-      </div>
-      <div class="service-shape-2">
-        <img src="assets/img/home-1/service/shape-2.png" alt="img" />
-      </div>
-      <div class="service-shape-3">
-        <img src="assets/img/home-1/service/shape-3.png" alt="img" />
-      </div>
-      <div class="container">
-        <div class="section-title text-center">
-          <span
-            class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle"
-            >OUR SERVICES</span
-          >
-          <h2 class="text-white tx-title sec_title tz-itm-title tz-itm-anim">
-            Comprehensive Orthopedic & Skin Treatments in Balaghat
-          </h2>
+<style>
+  .nishok-service-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 2rem;
+    align-items: start;
+  }
+  .nishok-sticky-img {
+    position: sticky;
+    top: 100px;
+  }
+  .nishok-sticky-img-ortho {
+    position: sticky;
+    top: 100px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .nishok-service-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .nishok-sticky-img,
+    .nishok-sticky-img-ortho {
+      position: relative;
+      top: auto;
+      margin-top: 0;
+      order: -1;
+      width: 100%;
+    }
+    .nishok-tab-bar {
+      flex-direction: column;
+    }
+    .nishok-tab-bar button {
+      width: 100%;
+      justify-content: center;
+    }
+    .nishok-panel-header {
+      flex-direction: column;
+    }
+    .nishok-panel-title {
+      font-size: 17px !important;
+    }
+    /* Image full width, full natural height on mobile - no crop */
+    .nishok-img-wrapper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 0.5px solid #e0e0e0;
+    }
+    .nishok-service-img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: unset !important;
+    }
+  }
+</style>
+
+<section class="service-section section-padding section-bg-2 fix">
+  <div class="service-shape-1"><img src="assets/img/home-1/service/shape-1.png" alt="img" /></div>
+  <div class="service-shape-2"><img src="assets/img/home-1/service/shape-2.png" alt="img" /></div>
+  <div class="service-shape-3"><img src="assets/img/home-1/service/shape-3.png" alt="img" /></div>
+  <div class="container">
+    <div class="section-title text-center">
+      <span class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle">OUR SERVICES</span>
+      <h2 class="text-white tx-title sec_title tz-itm-title tz-itm-anim">
+        Comprehensive Orthopedic &amp; Skin Treatments in Balaghat
+      </h2>
+    </div>
+
+    <!-- TAB BUTTONS -->
+    <div class="nishok-tab-bar" style="display:flex; gap:8px; margin-bottom:1.5rem; flex-wrap:wrap;">
+      <button
+        onclick="nishokTab('ortho', this)"
+        style="padding:10px 22px; border:none; border-radius:8px; background:#1D9E75; color:#fff; font-size:14px; font-weight:500; cursor:pointer; display:inline-flex; align-items:center; gap:6px;"
+        id="nishok-btn-ortho">
+        <i class="far fa-bone"></i> Orthopedic
+      </button>
+      <button
+        onclick="nishokTab('derm', this)"
+        style="padding:10px 22px; border:0.5px solid #ccc; border-radius:8px; background:#f5f5f5; color:#555; font-size:14px; font-weight:500; cursor:pointer; display:inline-flex; align-items:center; gap:6px;"
+        id="nishok-btn-derm">
+        <i class="far fa-sparkles"></i> Dermatology &amp; Skin Services
+      </button>
+    </div>
+
+    <!-- ==================== ORTHOPEDIC PANEL ==================== -->
+    <div id="nishok-panel-ortho" style="display:block;">
+
+      <div class="nishok-panel-header" style="display:flex; align-items:flex-start; gap:12px; margin-bottom:1rem;">
+        <div style="width:44px; height:44px; min-width:44px; border-radius:50%; background:#E1F5EE; display:flex; align-items:center; justify-content:center;">
+          <i class="flaticon-good-heart" style="color:#0F6E56; font-size:20px;"></i>
         </div>
-        <div class="service-wrapper">
-          <div class="row">
-            <div class="col-lg-4">
+        <div>
+          <h3 class="nishok-panel-title" style="font-size:20px; font-weight:600; color:#1a1a1a; margin:0 0 4px;">Orthopedic Care</h3>
+          <p style="font-size:14px; color:#666; margin:0; line-height:1.6;">
+            Our orthopedic specialists provide advanced treatment for bone, joint, and muscle conditions — helping you recover faster and move pain-free.
+          </p>
+        </div>
+      </div>
 
-              <ul class="nav">
-                <li class="nav-item wow fadeInUp" data-wow-delay=".2s">
-                  <a
-                    href="#thumb1"
-                    data-bs-toggle="tab"
-                    class="nav-link active "
-                  >
-                  Orthopedic <i class="far fa-chevron-right"></i>
-                  </a>
-                </li>
-                <li class="nav-item wow fadeInUp" data-wow-delay=".4s">
-                  <a href="#thumb2" data-bs-toggle="tab" class="nav-link ">
-                    Dermatology & Skin Services <i class="far fa-chevron-right"></i>
-                  </a>
-                </li>
-               
-              </ul>
-            </div>
-            <div class="col-lg-8 wow fadeInUp" data-wow-delay=".3s">
-              <div class="tab-content">
-                <div id="thumb1" class="tab-pane fade show active">
-                  <div
-                    class="service-box-items wow fadeInUp"
-                    data-wow-delay=".3s"
-                  >
-                    <div class="row g-4 w-100 align-items-center">
-                      <div class="col-12 col-xl-12">
-                        <div class="service-icon-box">
-                          <div class="icon">
-                            <i class="flaticon-good-heart"></i>
-                          </div>
-                          <h3 class="index-service-panel-title">
-                            <a href="#">Orthopedic Care</a>
-                          </h3>
-                          <p class="index-service-panel-lead">
-                            Our orthopedic specialists provide advanced treatment
-                            for bone, joint, and muscle conditions helping you
-                            recover faster and move pain-free.
-                          </p>
-                          <div class="row g-4 w-100 align-items-start">
-                            <div class="col-12 col-xl-8">
-                              <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list">
-                                <li>Fracture treatment &amp; bone setting</li>
-                                <li>Knee replacement surgery</li>
-                                <li>Arthritis treatment</li>
-                                <li>Back pain &amp; slip disc treatment</li>
-                                <li>Sports injury rehabilitation</li>
-                              </ul>
-                            </div>
-                            <div class="col-12 col-xl-4">
-                              <div class="service-image">
-                                <img
-                                  class="img-fluid"
-                                  src="assets/img/home-1/service/service-02.png"
-                                  alt="Orthopedic care at Nishok Hospital"
-                                />
-                                <!-- <span class="post-box">Orthopedic</span> -->
-                              </div>
-                            </div>
-                          </div>
+      <div class="nishok-service-grid">
 
-                          <a href="service.html" class="theme-btn mt-5">
-                            <i class="far fa-chevron-right"></i>
-                            More Details
-                          </a>
-                        </div>
-                      </div>
-                     
-                    </div>
-                  </div>
-                </div>
-                <div id="thumb2" class="tab-pane fade ">
-                  <div class="service-box-items">
-                    <div class="row g-4 w-100 align-items-center">
-                      <div class="col-12 col-xl-12">
-                        <div class="service-icon-box">
-                          <div class="icon">
-                            <i class="flaticon-good-heart"></i>
-                          </div>
-                          <h3 class="index-service-panel-title">
-                            <a href="#"
-                              >Advanced skin &amp; hair care solutions</a
-                            >
-                          </h3>
-                          <p class="index-service-panel-lead">
-                            We offer personalized dermatology treatments to improve
-                            skin health, enhance appearance, and restore confidence
-                            using modern techniques.
-                          </p>
-                          <div class="row g-4 w-100 align-items-start">
-                            <div class="col-12 col-xl-8">
-                              <p class="index-service-list-heading">Services list</p>
-                              <ul class="index-service-list">
-                                <li>Acne &amp; pimple treatment</li>
-                                <li>Pigmentation &amp; melasma treatment</li>
-                                <li>PRP hair loss treatment</li>
-                                <li>HydraFacial skin treatment</li>
-                                <li>Laser skin rejuvenation</li>
-                              </ul>
-                            </div>
-                            <div class="col-12 col-xl-4">
-                              <div class="service-image">
-                                <img
-                                  class="img-fluid"
-                                  src="assets/img/home-1/service/service-01.png"
-                                  alt="Dermatology services at Nishok Hospital"
-                                />
-                              
-                              </div>
-                            </div>
-                          </div>
+        <!-- LEFT: Accordion list -->
+        <div>
+          <p style="font-size:11px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:#888; margin:0 0 10px;">Services List</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
 
-                          <a href="service.html" class="theme-btn mt-5">
-                            <i class="far fa-chevron-right"></i>
-                            More Details
-                          </a>
-                        </div>
-                      </div>
-                     
-                    </div>
-                  </div>
-                </div>
-              
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Complex Fracture &amp; Trauma Surgeries <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
               </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Advanced treatment for road traffic accidents, high-impact injuries, and complicated fractures</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Management of open fractures, multiple fractures, and failed previous surgeries</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Modern fixation techniques using plates, nails, screws, and minimally invasive methods</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Joint Replacement Surgeries (Knee &amp; Hip) <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Total and partial knee replacement for severe arthritis and joint damage</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Hip replacement surgeries for fractures, avascular necrosis, and painful arthritis</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Faster recovery protocols focused on early mobilization and pain relief</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Spine Surgeries &amp; Slip Disc Treatment <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Treatment for slip disc, sciatica, spinal stenosis, and chronic back pain</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Surgical and non-surgical management of cervical and lumbar spine disorders</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Personalized rehabilitation programs for long-term spine health and recovery</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Sports Injury &amp; Arthroscopic Surgeries <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Arthroscopic (keyhole) surgeries for ligament, meniscus, and shoulder injuries</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Specialized care for ACL tears, sports trauma, and joint instability</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Rehabilitation programs designed for faster return to sports and daily activities</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Rehabilitation &amp; Physiotherapy Guidance <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Customized rehabilitation plans after fractures, surgeries, and joint problems</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Exercises focused on improving strength, mobility, and functional recovery</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Guidance for posture correction, gait training, and pain management</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Congenital Bone &amp; Joint Deformity Treatment <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Evaluation and treatment of congenital deformities in children and adults</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Management of bow legs, knock knees, clubfoot, and limb deformities</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Long-term corrective planning to improve mobility and quality of life</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Arthritis &amp; Chronic Joint Pain Management <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Comprehensive treatment for osteoarthritis, rheumatoid arthritis, and joint stiffness</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Non-surgical options including medications, injections, and lifestyle guidance</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Advanced surgical solutions when conservative treatment is not effective</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Back Pain, Neck Pain &amp; Sciatica Treatment <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Diagnosis and treatment for chronic back pain, neck pain, and nerve compression</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Management of sciatica, muscle spasms, and posture-related spine problems</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Combination of medications, physiotherapy, and minimally invasive procedures</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Pediatric Orthopedic Care <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Specialized orthopedic care for children with bone, joint, and growth-related problems</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Treatment of pediatric fractures, walking abnormalities, and developmental conditions</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Child-friendly approach focused on safe recovery and healthy bone development</li>
+              </ul>
+            </li>
+
+            <li style="border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; overflow:hidden;">
+              <div onclick="nishokAccordion(this)" style="padding:10px 14px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:600; color:#1a1a1a;">
+                Osteoporosis &amp; Geriatric Fracture Care <i class="far fa-chevron-right" style="transition:transform 0.2s; font-size:12px; color:#888; flex-shrink:0; margin-left:8px;"></i>
+              </div>
+              <ul style="display:none; list-style:disc; padding:8px 14px 12px 28px; margin:0; border-top:0.5px solid #f0f0f0; background:#fafafa;">
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Diagnosis and treatment of osteoporosis to reduce fracture risk in elderly patients</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Management of hip, wrist, and spine fractures in senior citizens</li>
+                <li style="font-size:12px; color:#555; line-height:1.7; padding:2px 0;">Comprehensive care focused on mobility, fall prevention, and healthy aging</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <a href="service.html" class="theme-btn mt-5" style="display:inline-flex; align-items:center; gap:6px; margin-top:1.5rem;">
+            <i class="far fa-chevron-right"></i> More Details
+          </a>
+        </div>
+
+        <!-- RIGHT: Sticky Image -->
+        <div class="nishok-sticky-img-ortho">
+          <div class="nishok-img-wrapper" style="border-radius:12px; overflow:hidden; border:0.5px solid #e0e0e0;">
+            <img
+              class="img-fluid nishok-service-img"
+              src="assets/img/home-1/service/service-02.png"
+              alt="Orthopedic care at Nishok Hospital"
+              style="width:100%; height:320px; display:block; object-fit:cover; object-position:center; max-width:100%;"
+            />
+            <div style="padding:14px 16px; background:#E1F5EE;">
+              <p style="font-size:13px; font-weight:600; color:#0F6E56; margin:0 0 3px;">Expert Orthopedic Surgeons</p>
+              <p style="font-size:12px; color:#1D9E75; margin:0;">Advanced treatments for bone, joint &amp; spine</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
+      </div>
+    </div>
+
+    <!-- ==================== DERMATOLOGY PANEL ==================== -->
+    <div id="nishok-panel-derm" style="display:none;">
+
+      <div class="nishok-panel-header" style="display:flex; align-items:flex-start; gap:12px; margin-bottom:1rem;">
+        <div style="width:44px; height:44px; min-width:44px; border-radius:50%; background:#FAEEDA; display:flex; align-items:center; justify-content:center;">
+          <i class="flaticon-good-heart" style="color:#854F0B; font-size:20px;"></i>
+        </div>
+        <div>
+          <h3 class="nishok-panel-title" style="font-size:20px; font-weight:600; color:#1a1a1a; margin:0 0 4px;">Advanced Skin &amp; Hair Care Solutions</h3>
+          <p style="font-size:14px; color:#666; margin:0; line-height:1.6;">
+            We offer personalized dermatology treatments to improve skin health, enhance appearance, and restore confidence using modern techniques.
+          </p>
+        </div>
+      </div>
+
+      <div class="nishok-service-grid">
+
+        <!-- LEFT: Services list -->
+        <div>
+          <p style="font-size:11px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:#888; margin:0 0 10px;">Services List</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; align-items:center; gap:10px; padding:10px 14px; border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; font-size:13px; color:#1a1a1a;">
+              <i class="far fa-check-circle" style="color:#1D9E75; font-size:16px; flex-shrink:0;"></i> Acne &amp; pimple treatment
+            </li>
+            <li style="display:flex; align-items:center; gap:10px; padding:10px 14px; border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; font-size:13px; color:#1a1a1a;">
+              <i class="far fa-check-circle" style="color:#1D9E75; font-size:16px; flex-shrink:0;"></i> Pigmentation &amp; melasma treatment
+            </li>
+            <li style="display:flex; align-items:center; gap:10px; padding:10px 14px; border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; font-size:13px; color:#1a1a1a;">
+              <i class="far fa-check-circle" style="color:#1D9E75; font-size:16px; flex-shrink:0;"></i> PRP hair loss treatment
+            </li>
+            <li style="display:flex; align-items:center; gap:10px; padding:10px 14px; border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; font-size:13px; color:#1a1a1a;">
+              <i class="far fa-check-circle" style="color:#1D9E75; font-size:16px; flex-shrink:0;"></i> HydraFacial skin treatment
+            </li>
+            <li style="display:flex; align-items:center; gap:10px; padding:10px 14px; border:0.5px solid #e0e0e0; border-radius:8px; background:#fff; font-size:13px; color:#1a1a1a;">
+              <i class="far fa-check-circle" style="color:#1D9E75; font-size:16px; flex-shrink:0;"></i> Laser skin rejuvenation
+            </li>
+          </ul>
+
+          <a href="service.html" class="theme-btn mt-5" style="display:inline-flex; align-items:center; gap:6px; margin-top:1.5rem;">
+            <i class="far fa-chevron-right"></i> More Details
+          </a>
+        </div>
+
+        <!-- RIGHT: Sticky Image -->
+        <div class="nishok-sticky-img">
+          <div class="nishok-img-wrapper" style="border-radius:12px; overflow:hidden; border:0.5px solid #e0e0e0;">
+            <img
+              class="img-fluid nishok-service-img"
+              src="assets/img/home-1/service/service-01.png"
+              alt="Dermatology services at Nishok Hospital"
+              style="width:100%; height:320px; display:block; object-fit:cover; object-position:center; max-width:100%;"
+            />
+            <div style="padding:14px 16px; background:#FAEEDA;">
+              <p style="font-size:13px; font-weight:600; color:#854F0B; margin:0 0 3px;">Skin &amp; Hair Specialists</p>
+              <p style="font-size:12px; color:#BA7517; margin:0;">Modern dermatology for all skin types</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function nishokTab(tab, btn) {
+  document.getElementById('nishok-panel-ortho').style.display = 'none';
+  document.getElementById('nishok-panel-derm').style.display = 'none';
+  document.getElementById('nishok-panel-' + tab).style.display = 'block';
+
+  var btns = [document.getElementById('nishok-btn-ortho'), document.getElementById('nishok-btn-derm')];
+  btns.forEach(function(b) {
+    b.style.background = '#f5f5f5';
+    b.style.color = '#555';
+    b.style.border = '0.5px solid #ccc';
+  });
+  btn.style.background = '#1D9E75';
+  btn.style.color = '#fff';
+  btn.style.border = 'none';
+}
+
+function nishokAccordion(header) {
+  var sub = header.nextElementSibling;
+  var icon = header.querySelector('i');
+  var isOpen = sub.style.display === 'block';
+
+  document.querySelectorAll('[onclick="nishokAccordion(this)"] + ul').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  document.querySelectorAll('[onclick="nishokAccordion(this)"] i').forEach(function(el) {
+    el.style.transform = 'rotate(0deg)';
+  });
+
+  if (!isOpen) {
+    sub.style.display = 'block';
+    icon.style.transform = 'rotate(90deg)';
+  }
+}
+</script>
+<!-- =================================== -->
     <!-- Cta Section Start -->
     <section class="cta-section color-bg-1 section-padding pt-0 fix">
       <div class="team-shape-2">
@@ -1435,48 +1694,66 @@
       <video class="vedio-bg-video" autoplay muted loop playsinline>
         <source src="assets/img/videologo.mp4" type="video/mp4" />
       </video>
-      <div class="counter-section">
-        <div class="container">
-          <div class="counter-wrapper zoom-effect-style">
-            <div class="counter-items wow fadeInUp" data-wow-delay=".2s">
-              <div class="icon">
-                <img src="assets/img/home-1/counter/icon-01.png" alt="img" />
-              </div>
-              <div class="content">
-                <h2><span class="odometer" data-count="20">00</span>k</h2>
-                <p>Satisfied Patients</p>
-              </div>
-            </div>
-            <div class="counter-items wow fadeInUp" data-wow-delay=".4s">
-              <div class="icon">
-                <img src="assets/img/home-1/counter/icon-02.png" alt="img" />
-              </div>
-              <div class="content">
-                <h2><span class="odometer" data-count="1000">00</span></h2>
-                <p>Successful Surgeries</p>
-              </div>
-            </div>
-            <div class="counter-items wow fadeInUp" data-wow-delay=".6s">
-              <div class="icon">
-                <img src="assets/img/home-1/counter/icon-03.png" alt="img" />
-              </div>
-              <div class="content">
-                <h2><span class="odometer" data-count="100">00</span>+</h2>
-                <p>Replacement Surgeries</p>
-              </div>
-            </div>
-            <div class="counter-items wow fadeInUp" data-wow-delay=".6s">
-              <div class="icon">
-                <img src="assets/img/home-1/counter/icon-04.png" alt="img" />
-              </div>
-              <div class="content">
-                <h2><span class="odometer" data-count="1">00</span>K</h2>
-                <p>successful lasers and cosmetic procedure</p>
-              </div>
-            </div>
-          </div>
+   <!-- Counter Section -->
+<div class="counter-section">
+  <div class="container">
+    <div class="counter-wrapper zoom-effect-style">
+
+      <!-- Item 1: Satisfied Patients -->
+      <div class="counter-items wow fadeInUp" data-wow-delay=".2s">
+        <div class="icon">
+          <img src="assets/img/home-1/counter/icon-01.png"
+               alt="Satisfied patients icon"
+               width="48" height="48" />
+        </div>
+        <div class="content">
+          <h2><span class="odometer" data-count="20">00</span><span class="suffix">k+</span></h2>
+          <p>Satisfied patients</p>
         </div>
       </div>
+
+      <!-- Item 2: Successful Surgeries -->
+      <div class="counter-items wow fadeInUp" data-wow-delay=".4s">
+        <div class="icon">
+          <img src="assets/img/home-1/counter/icon-02.png"
+               alt="Successful surgeries icon"
+               width="48" height="48" />
+        </div>
+        <div class="content">
+          <h2><span class="odometer" data-count="1000">00</span><span class="suffix">+</span></h2>
+          <p>Successful surgeries</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Replacement Surgeries -->
+      <div class="counter-items wow fadeInUp" data-wow-delay=".6s">
+        <div class="icon">
+          <img src="assets/img/home-1/counter/icon-03.png"
+               alt="Replacement surgeries icon"
+               width="48" height="48" />
+        </div>
+        <div class="content">
+          <h2><span class="odometer" data-count="100">00</span><span class="suffix">+</span></h2>
+          <p>Replacement surgeries</p>
+        </div>
+      </div>
+
+      <!-- Item 4: Laser & Cosmetic Procedures — was .6s (duplicate), now .8s -->
+      <div class="counter-items wow fadeInUp" data-wow-delay=".8s">
+        <div class="icon">
+          <img src="assets/img/home-1/counter/icon-04.png"
+               alt="Laser and cosmetic procedures icon"
+               width="48" height="48" />
+        </div>
+        <div class="content">
+          <h2><span class="odometer" data-count="1000">00</span><span class="suffix">+</span></h2>
+          <p>Laser &amp; cosmetic procedures</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
       <div class="vedio-wrapper">
         <div class="video">
           
