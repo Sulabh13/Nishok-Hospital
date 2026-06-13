@@ -2,6 +2,7 @@
 <html lang="en">
   <!--<< Header Area >>-->
   <head>
+    
     <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -1122,129 +1123,509 @@
       </div>
     </div>
 
-    <!-- About Section Start -->
-    <section class="about-section section-padding fix">
-      <div class="shape-1-img">
-        <img src="assets/img/home-1/about/shape-01.png" alt="img" />
+<!-- ============================ -->
+
+
+<!-- ===== HERO SECTION ===== -->
+
+<!-- ===== HERO SECTION ===== -->
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f6fb; }
+ 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes floatUD {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+    @keyframes badgePop {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+ 
+    /* ── WRAPPER ── */
+    .card {
+      /* max-width: 1100px; */
+      margin: 40px auto;
+      /* background: #a22424; */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+ 
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      padding: 56px 56px 0;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(0,123,255,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+ 
+    /* LEFT */
+    .left {
+      flex: 1;
+      padding-bottom: 48px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInLeft 0.75s ease both;
+    }
+ 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #D6F5F0;
+      border: 1px solid #a8ddd4;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 10.5px;
+      color: #1A9E8F;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 18px;
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+ 
+    .htitle {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0d1f4e;
+      line-height: 1.17;
+      margin-bottom: 14px;
+      animation: fadeInUp 0.5s ease 0.2s both;
+    }
+    .htitle .acc { color: #007bff; }
+ 
+    .hdesc {
+      font-size: 13.5px;
+      color: #4a5568;
+      line-height: 1.72;
+      margin-bottom: 18px;
+      max-width: 460px;
+      animation: fadeInUp 0.5s ease 0.3s both;
+    }
+ 
+    .doc-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #f0f7ff;
+      border-radius: 12px;
+      border-left: 3px solid #007bff;
+      max-width: 420px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease 0.4s both;
+    }
+    .doc-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #007bff;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .dname { color: #0d1f4e; font-size: 15px; font-weight: 700; }
+    .dqual { color: #6b7a99; font-size: 11.5px; margin-top: 3px; }
+ 
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+    .b {
+      background: #f0f7ff;
+      border: 1px solid #cce0ff;
+      border-radius: 8px;
+      padding: 7px 13px;
+      color: #0d1f4e;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0;
+      animation: badgePop 0.4s ease forwards;
+    }
+    .b:nth-child(1) { animation-delay: 0.5s; }
+    .b:nth-child(2) { animation-delay: 0.65s; }
+    .b:nth-child(3) { animation-delay: 0.8s; }
+    .b:nth-child(4) { animation-delay: 0.95s; }
+ 
+    .ibar {
+      display: flex;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 440px;
+      background: #fff;
+      animation: fadeInUp 0.5s ease 0.9s both;
+    }
+    .ii {
+      flex: 1;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .ii:first-child { border-right: 1px solid #e2e8f0; }
+    .ico {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .ilbl { font-size: 10px; color: #9aa5b4; letter-spacing: 1px; text-transform: uppercase; }
+    .ival { font-size: 13px; color: #0d1f4e; font-weight: 700; margin-top: 2px; }
+ 
+    /* RIGHT */
+    .right {
+      width: 380px;
+      flex-shrink: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      animation: fadeInRight 0.85s ease 0.3s both;
+    }
+ 
+    .misso-badge {
+      background: #0d1f4e;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 9px 22px;
+      border-radius: 10px;
+      letter-spacing: 2px;
+      text-align: center;
+      line-height: 1.45;
+      margin-bottom: 14px;
+      animation: fadeInUp 0.5s ease 1s both;
+    }
+    .misso-badge span {
+      color: #38b6f1;
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+ 
+    .robo-img {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      object-position: bottom center;
+      animation: floatUD 4s ease-in-out 1.2s infinite;
+      filter: drop-shadow(0 20px 30px rgba(0,123,255,0.13));
+      /* margin-right: 200px; */
+    }
+ 
+    /* ── STATS STRIP ── */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 26px 40px;
+      border-top: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+    .st { text-align: center; }
+    .st .num  { font-size: 32px; font-weight: 800; color: #007bff; }
+    .st .suf  { font-size: 28px; font-weight: 800; color: #007bff; }
+    .st .lbl  { font-size: 11.5px; color: #6b7a99; margin-top: 4px; letter-spacing: 0.5px; }
+    .sdiv     { width: 1px; height: 50px; background: #e2e8f0; }
+ 
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .card { margin: 0; border-radius: 0; }
+ 
+      .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 28px 20px 0;
+      }
+      .left {
+        padding-bottom: 28px;
+        text-align: center;
+        animation: fadeInUp 0.7s ease both;
+      }
+      .htitle  { font-size: 26px; }
+      .hdesc   { font-size: 13px; max-width: 100%; }
+      .doc-card { max-width: 100%; }
+      .badges  { justify-content: center; }
+      .ibar    { max-width: 100%; }
+ 
+      .right {
+        width: 100%;
+        animation: fadeInUp 0.7s ease 0.2s both;
+      }
+      .robo-img { width: 60%; }
+ 
+      .stats {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 22px 16px;
+      }
+      .sdiv { display: none; }
+      .st   { width: 44%; }
+      .st .num { font-size: 26px; }
+      .st .suf { font-size: 22px; }
+    }
+ 
+    @media (max-width: 420px) {
+      .htitle   { font-size: 22px; }
+      .robo-img { width: 78%; }
+      .st       { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+ 
+<div class="card">
+ 
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+ 
+    <!-- LEFT -->
+    <div class="left">
+ 
+      <div class="eyebrow">🤖 Now Available in Balaghat</div>
+ 
+      <div class="htitle">
+        Care With<br>
+        <span class="acc">Surgeon Precision</span><br>
+        With World Best
       </div>
-      <div class="shape-2-img">
-        <img src="assets/img/home-1/about/shape-02.png" alt="img" />
+ 
+      <p class="hdesc">
+        Balaghat's most advanced robotic joint replacement surgery — now at Samadhan Hospital.
+        Dr. Shrey Jain brings world-class MISSO robotic technology for permanent solutions
+        to knee and joint problems.
+      </p>
+ 
+      <div class="doc-card">
+        <div class="doc-avatar">SJ</div>
+        <div>
+          <div class="dname">Dr. Shrey Jain</div>
+          <div class="dqual">M.S. (Ortho) · Fellowship in Robotic Joint Replacement</div>
+        </div>
       </div>
-      <div class="shape-3-img">
-        <img src="assets/img/home-1/about/shape-03.png" alt="img" />
+ 
+      <div class="badges">
+        <div class="b">🤖 Robotic Precision</div>
+        <div class="b">🩸 Minimal Blood Loss</div>
+        <div class="b">🏃 Quicker Recovery</div>
+        <div class="b">🛡️ Long-Lasting Results</div>
       </div>
-      <div class="container">
-        <div class="about-wrapper">
-          <div class="row g-4">
-            <div class="col-lg-5 wow fadeInUp" data-wow-delay=".3s">
-              <div class="about-image">
-                <img
-                  src="assets/img/home-1/about/doctor.png"
-                  alt="img" style="width: 100%; height: 600px; object-fit: cover; padding-top: 70px;"
-                  class="wow img-custom-anim-left"
-                />
-                <div class="about-img-2 float-bob-x">
-                  <!-- <img src="assets/img/home-1/about/about-03.png" alt="img" /> -->
-                </div>
-                <div class="about-img-3 float-bob-y">
-                  <!-- <img src="assets/img/home-1/about/about-02.png" alt="img" /> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="about-content">
-                <div class="section-title mb-0 text-start">
-                  <span
-                    class="subtitle tz-sub-tilte tz-sub-anim text-uppercase tx-subTitle"
-                    >Why Choose Nishok Hospital</span
-                  >
-                  <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
-                    Trusted Healthcare in the Heart of Balaghat
-
-                  </h2>
-                </div>
-                <p class="about-text wow fadeInUp" data-wow-delay=".2s">
-                  At Nishok Hospital, we combine specialist medical expertise with modern technology and a patient-first approach. Our facility is designed to provide comfortable, accurate, and effective treatment for orthopedic and dermatological conditions   all under one roof in Balaghat.
-
-                </p>
-                <div class="about-icon-area wow fadeInUp" data-wow-delay=".3s">
-                  <div class="row g-4 w-100">
-                    <div class="col-12 col-md-6">
-                      <div class="about-img ">
-                        <img
-                          src="assets/img/home-1/about/dr-removebg-preview.png"
-                          alt="img" style="height: 70px;"
-                        />
-                      </div>
-                      <div class="about-items ">
-                        <p class="mb-0">
-                          <span style="font-weight: bold; font-size: 20px;">Expert Orthopedic Surgeon</span>
-                          <br />
-                          Dr. Shrey with specialized training in fractures, joint replacement & sports injuries
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="about-img ">
-                        <img
-                          src="assets/img/home-1/about/missdr.png"
-                          alt="img" style="height: 70px;"
-                        />
-                      </div>
-                      <div class="about-items ">
-                        <p class="mb-0">
-                          <span style="font-weight: bold; font-size: 20px;">Qualified Dermatologist</span>
-                          <br />
-                       Leading Dermatologist Dr. Amisha, specializing in Skin, Hair, Laser, and Advanced Aesthetic Treatments.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="list-box wow fadeInUp" data-wow-delay=".4s">
-                  <div class="row g-4 w-100">
-                    <div class="col-12 col-md-6">
-                      <ul class="mb-0">
-                        <li>
-                          <i class="far fa-check"></i>
-                          Serving Balaghat, Gondia, Waraseoni, and Seoni districts
-                        </li>
-                        <li>
-                          <i class="far fa-check"></i>
-                          Modern diagnostic and treatment equipment
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <ul class="mb-0">
-                        <li>
-                          <i class="far fa-check"></i>
-                        
-                          Affordable care with transparent pricing
-                        </li>
-                        <li>
-                          <i class="far fa-check"></i>
-                          Hygienic, patient-friendly environment
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-               
-
-                <div class="about-btn wow fadeInUp" data-wow-delay=".5s">
-                  <a href="about.html" class="theme-btn">
-                    <i class="far fa-chevron-right"></i>
-                  Book Appointment
-                  </a>
-                </div>
-              </div>
-            </div>
+ 
+      <div class="ibar">
+        <div class="ii">
+          <div class="ico" style="background:#e8f4ff;">🕐</div>
+          <div>
+            <div class="ilbl">Hours</div>
+            <div class="ival">09:30AM — 7:30PM</div>
+          </div>
+        </div>
+        <div class="ii">
+          <div class="ico" style="background:#fff0f0;">📞</div>
+          <div>
+            <div class="ilbl">Call</div>
+            <div class="ival">07632-295250</div>
           </div>
         </div>
       </div>
-    </section>
+ 
+    </div>
+ 
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="misso-badge">MISSO<span>Robotic System</span></div>
+      <!-- 
+        Replace the src below with your actual robot image path.
+        Example: src="assets/img/home-1/about/robo-removebg-preview.png"
+      -->
+      <img
+        class="robo-img"
+        src="assets/img/home-1/about/robo-removebg-preview.png"
+        alt="Dr. Shrey Jain with MISSO Robotic System"
+        onerror="this.style.display='none'; document.getElementById('robo-fallback').style.display='block';"
+      />
+      <!-- Fallback SVG shown if image is missing -->
+      <svg id="robo-fallback" class="robo-img" style="display:none" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="90" y="20" width="80" height="70" rx="18" fill="#0d1f4e"/>
+        <rect x="105" y="35" width="50" height="30" rx="8" fill="#1a3a7a"/>
+        <circle cx="120" cy="50" r="7" fill="#38b6f1"/><circle cx="140" cy="50" r="7" fill="#38b6f1"/>
+        <circle cx="120" cy="50" r="3" fill="#fff"/><circle cx="140" cy="50" r="3" fill="#fff"/>
+        <rect x="115" y="68" width="30" height="6" rx="3" fill="#38b6f1" opacity=".7"/>
+        <rect x="75" y="95" width="110" height="100" rx="14" fill="#0d1f4e"/>
+        <rect x="85" y="105" width="35" height="25" rx="6" fill="#1a3a7a"/>
+        <rect x="140" y="105" width="35" height="25" rx="6" fill="#1a3a7a"/>
+        <rect x="88" y="108" width="29" height="6" rx="3" fill="#38b6f1" opacity=".8"/>
+        <rect x="143" y="108" width="29" height="6" rx="3" fill="#38b6f1" opacity=".8"/>
+        <circle cx="130" cy="148" r="14" fill="#007bff"/>
+        <circle cx="130" cy="148" r="8" fill="#38b6f1"/>
+        <circle cx="130" cy="148" r="4" fill="#fff"/>
+        <rect x="40" y="100" width="32" height="80" rx="10" fill="#0d1f4e"/>
+        <rect x="44" y="115" width="24" height="50" rx="7" fill="#1a3a7a"/>
+        <rect x="20" y="175" width="55" height="16" rx="8" fill="#0d1f4e"/>
+        <rect x="188" y="100" width="32" height="80" rx="10" fill="#0d1f4e"/>
+        <rect x="192" y="115" width="24" height="50" rx="7" fill="#1a3a7a"/>
+        <rect x="185" y="175" width="55" height="16" rx="8" fill="#0d1f4e"/>
+        <rect x="95" y="198" width="70" height="90" rx="10" fill="#0d1f4e"/>
+        <rect x="75" y="285" width="42" height="55" rx="10" fill="#0d1f4e"/>
+        <rect x="143" y="285" width="42" height="55" rx="10" fill="#0d1f4e"/>
+        <rect x="79" y="310" width="34" height="24" rx="6" fill="#1a3a7a"/>
+        <rect x="147" y="310" width="34" height="24" rx="6" fill="#1a3a7a"/>
+        <rect x="100" y="210" width="60" height="8" rx="4" fill="#38b6f1" opacity=".6"/>
+        <rect x="107" y="225" width="46" height="6" rx="3" fill="#007bff" opacity=".5"/>
+      </svg>
+    </div>
+ 
+  </section>
+ 
+  <!-- ════ STATS STRIP ════ -->
+  <div class="stats" id="stats-strip">
+    <div class="st"><div><span class="num" id="c1">0</span><span class="suf">+</span></div><div class="lbl">Robotic Surgeries</div></div>
+    <div class="sdiv"></div>
+    <div class="st"><div><span class="num" id="c2">0</span><span class="suf">%</span></div><div class="lbl">Patient Satisfaction</div></div>
+    <div class="sdiv"></div>
+    <div class="st"><div><span class="num" id="c3">0</span><span class="suf">+</span></div><div class="lbl">Years Experience</div></div>
+    <div class="sdiv"></div>
+    <div class="st"><div><span class="num" id="c4">0</span><span class="suf">x</span></div><div class="lbl">Faster Recovery</div></div>
+  </div>
+ 
+</div>
+ 
+<script>
+  function animCount(id, target, dur) {
+    const el = document.getElementById(id);
+    let s = 0, step = target / (dur / 16);
+    const t = setInterval(() => {
+      s += step;
+      if (s >= target) { el.textContent = target; clearInterval(t); }
+      else { el.textContent = Math.floor(s); }
+    }, 16);
+  }
+ 
+  const strip = document.getElementById('stats-strip');
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animCount('c1', 500, 2000);
+      animCount('c2', 98,  2000);
+      animCount('c3', 10,  2000);
+      animCount('c4', 3,   1500);
+      obs.disconnect();
+    }
+  }, { threshold: 0.3 });
+  obs.observe(strip);
+</script>
+ 
+
+ 
+<!-- ================================== -->
+
+    <!-- About Section Start -->
+<section class="about-section section-padding fix">
+  <div class="container">
+    <div style="font-family: sans-serif; padding: 3rem 1rem; text-align: center; max-width: 900px; margin: 0 auto;">
+
+      <!-- Subtitle Badge -->
+      <!-- Subtitle -->
+<span style="display: inline-block; background: #d6f5f0; color: #1a9e8f; margin-bottom: 50px; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 10px 24px; border-radius: 4px;">
+  Why Choose Nishok Hospital
+</span>
+
+      <!-- Heading -->
+      <h2 style="font-size: 28px; font-weight: 600; color: #1a1a1a; max-width: 600px; margin: 0 auto 14px; line-height: 1.4;">
+        Trusted Healthcare in the Heart of Balaghat
+      </h2>
+
+      <!-- Description -->
+      <p style="font-size: 15px; color: #666; max-width: 600px; margin: 0 auto 36px; line-height: 1.8;">
+        At Nishok Hospital, we combine specialist medical expertise with modern technology and a patient-first approach.
+        Our facility provides comfortable, accurate, and effective treatment for orthopedic and dermatological conditions — all under one roof in Balaghat.
+      </p>
+
+      <!-- Doctor Cards -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 680px; margin: 0 auto 32px;">
+
+        <div style="background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 28px 20px; text-align: center; transition: border-color 0.2s;">
+          <div style="width: 72px; height: 72px; background: #e8f0fe; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
+            <img src="assets/img/home-1/about/dr-removebg-preview.png" alt="Dr. Shrey" style="height: 48px; object-fit: contain;" />
+          </div>
+          <p style="font-size: 15px; font-weight: 600; color: #1a1a1a; margin: 0 0 8px;">Expert Orthopedic Surgeon</p>
+          <p style="font-size: 13px; color: #777; margin: 0; line-height: 1.6;">
+            Dr. Shrey — specialized in fractures, joint replacement &amp; sports injuries
+          </p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 28px 20px; text-align: center; transition: border-color 0.2s;">
+          <div style="width: 72px; height: 72px; background: #fff8e1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
+            <img src="assets/img/home-1/about/missdr.png" alt="Dr. Amisha" style="height: 48px; object-fit: contain;" />
+          </div>
+          <p style="font-size: 15px; font-weight: 600; color: #1a1a1a; margin: 0 0 8px;">Leading Dermatologist</p>
+          <p style="font-size: 13px; color: #777; margin: 0; line-height: 1.6;">
+            Dr. Amisha — Skin, Hair, Laser &amp; Advanced Aesthetic Treatments
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Features List -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 640px; margin: 0 auto 32px; text-align: left;">
+        <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+          <i class="far fa-check-circle" style="color: #2e7d32; font-size: 16px; margin-top: 2px; flex-shrink: 0;"></i>
+          Serving Balaghat, Gondia, Waraseoni, and Seoni districts
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+          <i class="far fa-check-circle" style="color: #2e7d32; font-size: 16px; margin-top: 2px; flex-shrink: 0;"></i>
+          Modern diagnostic and treatment equipment
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+          <i class="far fa-check-circle" style="color: #2e7d32; font-size: 16px; margin-top: 2px; flex-shrink: 0;"></i>
+          Affordable care with transparent pricing
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+          <i class="far fa-check-circle" style="color: #2e7d32; font-size: 16px; margin-top: 2px; flex-shrink: 0;"></i>
+          Hygienic, patient-friendly environment
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="about-btn">
+        <a href="about.html" class="theme-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #1a73e8; color: #fff; font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 8px; text-decoration: none;">
+          <i class="far fa-calendar-plus"></i> Book Appointment
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- Service Section Start -->
 <style>
@@ -1596,7 +1977,7 @@ function nishokAccordion(header) {
     <!-- Cta Section Start -->
     <section class="cta-section color-bg-1 section-padding pt-0 fix">
       <div class="team-shape-2">
-        <img src="assets/img/home-1/team/shape-2.png" alt="img" />
+        <img src="assets/img/home-1/team/boan.png.png" alt="img" height="80" width="80" style="opacity: 0.5;" />
       </div>
       <div class="container">
         <div class="cta-wrapper zoom-effect-style bg-cover">
@@ -1604,7 +1985,7 @@ function nishokAccordion(header) {
             <source src="assets/img/videologo.mp4" type="video/mp4" />
           </video>
           <div class="cta-shape-1">
-            <img src="assets/img/home-1/cta/shape-01.png" alt="img" />
+            <img src="assets/img/home-1/cta/halth.png.png" height="80" width="80" style="opacity: 0.5;" alt="img" />
           </div>
           <div class="section-title-area align-items-end mb-0  bottom-2">
             <div class="section-title">
@@ -1678,8 +2059,7 @@ function nishokAccordion(header) {
                   >
                 </div>
                 <p>
-                  Expert in acne treatment, PRP therapy, HydraFacial, 
-        laser skin treatments, melasma & hair restoration. Balaghat's leading charma rog specialist.
+                 Expert in Acne Treatment, PRP Therapy, HydraFacial, Laser Skin Treatments, Melasma Management, and Hair Restoration. Recognized as one of Balaghat’s leading Skin & Hair Specialists.
                 </p>
               </div>
             </div>
@@ -1765,10 +2145,10 @@ function nishokAccordion(header) {
     <!-- Feature Section Start -->
     <section class="feature-treatment-section section-padding fix section-bg-3">
       <div class="feature-shape-1">
-        <img src="assets/img/home-1/feature/shape-01.png" alt="img" />
+        <!-- <img src="assets/img/home-1/feature/shape-01.png" alt="img" /> -->
       </div>
       <div class="feature-shape-2">
-        <img src="assets/img/home-1/feature/shape-02.png" alt="img" />
+        <img src="assets/img/home-2/about/plusicone.png" alt="img" height="80" width="80" style="opacity: 0.5;" />
       </div>
       <div class="container">
         <div class="section-title text-center">
@@ -1833,7 +2213,7 @@ function nishokAccordion(header) {
       style="background: #fff;"
     >
       <div class="shape float-bob-y">
-        <img src="assets/img/home-1/testimonial/vector.png" alt="img" />
+        <!-- <img src="assets/img/home-1/testimonial/vector.png" alt="img" /> -->
       </div>
       <div class="shape-2 float-bob-y">
         <img src="assets/img/home-1/testimonial/hand.png" alt="img" />
@@ -2496,10 +2876,10 @@ function nishokAccordion(header) {
         <img src="assets/img/home-1/footer/left-shape.png" alt="img" />
       </div>
       <div class="right-shape float-bob-x">
-        <img src="assets/img/home-1/footer/right-shape.png" alt="img" />
+        <img src="assets/img/home-1/footer/plusicone.png.png " height="80" width="80" style="opacity: 0.5;" alt="img" />
       </div>
       <div class="top-shape float-bob-y">
-        <img src="assets/img/home-1/footer/top.png" alt="img" />
+        <!-- <img src="assets/img/home-1/footer/top.png" alt="img" /> -->
       </div>
       <div class="container">
         <div class="footer-widget-wrapper">
@@ -2565,6 +2945,8 @@ function nishokAccordion(header) {
                   <div class="widget-head">
                     <h3>Our Services</h3>
                   </div>
+
+      
                   <ul class="list-area">
                    
                     <li>
